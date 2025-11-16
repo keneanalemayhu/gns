@@ -1,65 +1,192 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
+// @/app/page.tsx
 
-export default function Home() {
+import Link from "next/link";
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main className="min-h-screen bg-gray-50 dark:bg-neutral-900 text-gray-900 dark:text-gray-100">
+
+      {/* HERO SECTION */}
+      <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden">
+        <img
+          src="/hero.png"
+          alt="GNS Trading Hero Image"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+        <div className="absolute inset-0 bg-black/40 dark:bg-black/50" />
+
+        <div className="relative z-10 text-center max-w-3xl px-6">
+          <h1 className="text-5xl font-bold mb-4 text-white drop-shadow-lg">
+            Powering Ethiopia With Modern Renewable Solutions
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed drop-shadow">
+            Importing and supplying high-quality Solar Systems, Construction Machinery,
+            Medical Equipment, and Industrial Chemicals — built for Ethiopia’s growing market.
           </p>
+
+          <div className="mt-8">
+            <Link
+              href="/solar"
+              className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 shadow-lg transition"
+            >
+              Explore Solar Solutions
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </section>
+
+      {/* CONTENT */}
+      <div className="max-w-7xl mx-auto px-6 py-20">
+
+        {/* WHAT WE DO */}
+        <section className="mb-32">
+          <h2 className="text-3xl font-bold text-center mb-8">What We Do</h2>
+
+          <p className="text-lg max-w-4xl mx-auto text-center text-gray-700 dark:text-gray-300 mb-12">
+            GNS Trading is a fast-growing importer and distributor in Ethiopia — supplying
+            solar energy systems, construction machinery, medical equipment, and industrial
+            chemical products to businesses, NGOs, contractors, and private buyers.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-10">
+            {[
+              {
+                title: "Global Sourcing",
+                desc: "We partner with trusted manufacturers across China, Turkey, UAE, and Europe to secure high-quality products at competitive prices.",
+              },
+              {
+                title: "Import & Logistics",
+                desc: "We handle shipping, customs clearance, and local transport — delivering goods quickly and safely to Addis and regional buyers.",
+              },
+              {
+                title: "Wholesale & Retail Supply",
+                desc: "We supply both bulk purchasers and individual clients, ensuring reliable stock availability and flexible order quantities.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="bg-white dark:bg-neutral-800 p-6 rounded-2xl border dark:border-neutral-700 shadow-sm"
+              >
+                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* DIVISIONS */}
+        <section>
+          <h2 className="text-3xl font-bold text-center mb-12">Our Divisions</h2>
+
+          <div className="grid md:grid-cols-4 gap-10">
+
+            {/* SOLAR */}
+            <Link
+              href="/solar"
+              className="bg-white dark:bg-neutral-800 p-6 rounded-2xl border dark:border-neutral-700 shadow-sm hover:shadow-xl transition"
+            >
+              <div className="h-40 w-full bg-gray-300 dark:bg-neutral-700 rounded-lg mb-4 animate-pulse" />
+              <h3 className="text-xl font-semibold mb-2">Solar Energy</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">
+                Panels • Batteries • Inverters • Mounting • Installation
+              </p>
+            </Link>
+
+            {/* OTHER CATEGORIES */}
+            {[
+              {
+                name: "Construction Equipments",
+                desc: "Mixers • Compactors • Power tools • Welding machines",
+              },
+              {
+                name: "Medical Equipments",
+                desc: "Diagnostics • Lab equipment • Safety supplies",
+              },
+              {
+                name: "Industrial Chemicals",
+                desc: "Raw chemicals • Cleaning agents • Industrial solutions",
+              },
+            ].map((item) => (
+              <div
+                key={item.name}
+                className="bg-white dark:bg-neutral-800 p-6 rounded-2xl border dark:border-neutral-700 shadow-sm hover:shadow-xl transition"
+              >
+                <div className="h-40 w-full bg-gray-300 dark:bg-neutral-700 rounded-lg mb-4 animate-pulse" />
+                <h3 className="text-xl font-semibold mb-2">{item.name}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{item.desc}</p>
+                <p className="text-xs mt-2 text-blue-600 dark:text-blue-400">More Coming Soon</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* OUR PROCESS */}
+        <section className="mt-32">
+          <h2 className="text-3xl font-bold text-center mb-10">How We Work</h2>
+
+          <div className="grid md:grid-cols-4 gap-10">
+            {[
+              {
+                step: "1. Import",
+                desc: "We import ready-made, off-the-shelf solar products, equipment, and supplies directly from trusted international manufacturers.",
+              },
+              {
+                step: "2. Clearance",
+                desc: "Our team manages customs clearance, logistics, and secure transportation to ensure products arrive safely and on time in Ethiopia.",
+              },
+              {
+                step: "3. Configure",
+                desc: "Once products arrive, we inspect, configure, and prepare them for the local market — ensuring compatibility, packaging, and proper setup.",
+              },
+              {
+                step: "4. Sell",
+                desc: "We supply high-quality solar products and equipment directly to customers, businesses, wholesalers, and retailers across Ethiopia.",
+              },
+            ].map((i) => (
+              <div
+                key={i.step}
+                className="bg-white dark:bg-neutral-800 p-6 rounded-2xl shadow-sm border dark:border-neutral-700"
+              >
+                <h3 className="text-xl font-semibold mb-2">{i.step}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {i.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* TRUST SECTION */}
+        <section className="mt-32 text-center max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Your Trusted Ethiopian Supplier</h2>
+
+          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            With a strong network of factories, freight companies, and logistics partners,
+            GNS Trading ensures fast delivery, quality assurance, and fair pricing.
+            Whether you’re a private buyer, contractor, business, NGO, or reseller —
+            we deliver reliable products with professional support.
+          </p>
+
+          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
+            We believe in transparent trade, quality products, and long-term partnerships.
+          </p>
+        </section>
+
+        {/* CTA */}
+        <section className="mt-24 text-center">
+          <Link
+            href="/solar"
+            className="px-10 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 shadow-xl transition text-lg"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            Browse Solar Solutions
+          </Link>
+        </section>
+
+      </div>
+    </main>
   );
 }
