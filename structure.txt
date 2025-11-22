@@ -1,7 +1,21 @@
 gns/
 ├── public/
+│   ├── battery.png
+│   ├── car_port.png
+│   ├── car_port2.png
+│   ├── east_west.png
+│   ├── east_west2.jpg
+│   ├── hero.png
+│   ├── inverter.png
+│   └── solar_panel.png
 ├── src/
 │   ├── app/
+│   │   ├── construction/
+│   │   │   └── page.tsx
+│   │   ├── contact/
+│   │   │   └── page.tsx
+│   │   ├── medical/
+│   │   │   └── page.tsx
 │   │   ├── solar/
 │   │   │   └── page.tsx
 │   │   ├── favicon.ico
@@ -11,17 +25,15 @@ gns/
 │   │   └── providers.tsx
 │   ├── components/
 │   │   ├── common/
+│   │   │   ├── Footer.tsx
 │   │   │   ├── Header.tsx
 │   │   │   ├── LanguageToggle.tsx
+│   │   │   ├── Navigation.tsx
 │   │   │   └── ThemeToggle.tsx
 │   │   ├── context/
 │   │   │   ├── LanguageContext.tsx
 │   │   │   └── ThemeContext.tsx
 │   │   └── ui/
-│   │       ├── common/
-│   │       │   ├── Footer.tsx
-│   │       │   ├── Header.tsx
-│   │       │   └── Navigation.tsx
 │   │       ├── button.tsx
 │   │       ├── dropdown-menu.tsx
 │   │       └── sonner.tsx

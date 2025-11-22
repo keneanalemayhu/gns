@@ -40,18 +40,23 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-blue-400 dark:hover:text-blue-600">
+              <a href="/construction" className="hover:text-blue-400 dark:hover:text-blue-600">
                 Construction Equipments
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-blue-400 dark:hover:text-blue-600">
+              <a href="/medical" className="hover:text-blue-400 dark:hover:text-blue-600">
                 Medical Equipments
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="#" className="hover:text-blue-400 dark:hover:text-blue-600">
                 Industrial Chemicals
+              </a>
+            </li> */}
+            <li>
+              <a href="/contact" className="hover:text-blue-400 dark:hover:text-blue-600">
+                Contact us
               </a>
             </li>
           </ul>
@@ -139,12 +144,7 @@ export default function Footer() {
                 </a>
               </div>
             </li>
-
           </ul>
-
-          <p className="text-sm text-gray-400 dark:text-gray-500 mt-6">
-            Available on WhatsApp & Telegram
-          </p>
         </div>
       </div>
 

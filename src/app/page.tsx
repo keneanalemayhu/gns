@@ -82,8 +82,7 @@ export default function HomePage() {
         <section>
           <h2 className="text-3xl font-bold text-center mb-12">Our Divisions</h2>
 
-          <div className="grid md:grid-cols-4 gap-10">
-
+          <div className="grid md:grid-cols-3 gap-10">
             {/* SOLAR */}
             <Link
               href="/solar"
@@ -105,10 +104,6 @@ export default function HomePage() {
               {
                 name: "Medical Equipments",
                 desc: "Diagnostics • Lab equipment • Safety supplies",
-              },
-              {
-                name: "Industrial Chemicals",
-                desc: "Raw chemicals • Cleaning agents • Industrial solutions",
               },
             ].map((item) => (
               <div

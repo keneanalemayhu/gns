@@ -9,9 +9,9 @@ import { LanguageToggle } from "@/components/common/LanguageToggle";
 
 const navLinks = [
   { name: "Solar", href: "/solar" },
-  { name: "Construction", href: "#" },
-  { name: "Medical", href: "#" },
-  { name: "Industrial Chemicals", href: "#" },
+  { name: "Construction", href: "/construction" },
+  { name: "Medical", href: "/medical" },
+  // { name: "Industrial Chemicals", href: "#" },
 ];
 
 export default function Navigation() {
