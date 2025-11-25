@@ -10,7 +10,7 @@ export default function SolarPage() {
       <section className="relative h-[60vh] w-full flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <img
-          src="/solar_panel.png"
+          src="/solar/solar_panel.png"
           alt="Solar Panels"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -38,7 +38,7 @@ export default function SolarPage() {
             {/* Image Placeholder */}
             <div className="w-full h-72 rounded-xl overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/885350/pexels-photo-885350.jpeg"
+                src="/solar/solar_install.jpg"
                 alt="Solar Installation Team"
                 className="w-full h-full object-cover"
               />
@@ -150,7 +150,7 @@ export default function SolarPage() {
             <div className="bg-white dark:bg-neutral-800 rounded-xl border dark:border-neutral-700 shadow-sm p-6">
               <div className="w-full h-48 rounded-lg overflow-hidden mb-4">
                 <img
-                  src="https://images.pexels.com/photos/987544/pexels-photo-987544.jpeg"
+                  src="/solar/solar_tilt.png"
                   alt="Solar Tilt Roof Mount"
                   className="w-full h-full object-cover"
                 />
@@ -160,7 +160,6 @@ export default function SolarPage() {
               </h3>
               <ul className="list-disc ml-5 space-y-2 text-sm">
                 <li>Ideal for residential & commercial buildings.</li>
-                <li>Engineered by SIC Solar for durability & flexibility.</li>
                 <li>
                   <strong>Key Features:</strong> Adjustable angle,
                   weather-resistant, low maintenance.
@@ -182,14 +181,14 @@ export default function SolarPage() {
               <div className="grid grid-cols-2 gap-3 mb-4">
                 <div className="w-full h-40 rounded-lg overflow-hidden">
                   <img
-                    src="/car_port.png"
+                    src="/solar/car_port.png"
                     alt="Solar Carport Mounting System"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="w-full h-40 rounded-lg overflow-hidden">
                   <img
-                    src="/car_port2.png"
+                    src="/solar/car_port2.png"
                     alt="Solar Carport Mounting System Alternative View"
                     className="w-full h-full object-cover"
                   />
@@ -224,14 +223,14 @@ export default function SolarPage() {
               <div className="grid grid-cols-2 gap-3 mb-4">
                 <div className="w-full h-40 rounded-lg overflow-hidden">
                   <img
-                    src="/east_west.png"
+                    src="/solar/east_west.png"
                     alt="East-West Ground Mounting System"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="w-full h-40 rounded-lg overflow-hidden">
                   <img
-                    src="/east_west2.png"
+                    src="/solar/east_west2.jpg"
                     alt="East-West Ground Mounting System Alternate View"
                     className="w-full h-full object-cover"
                   />
@@ -269,7 +268,7 @@ export default function SolarPage() {
             <div className="grid grid-cols-2 gap-3">
               <div className="w-full h-72 rounded-xl overflow-hidden">
                 <img
-                  src="/battery.png"
+                  src="/solar/battery.png"
                   alt="Solar Battery"
                   className="w-full h-full object-cover"
                 />
@@ -277,7 +276,7 @@ export default function SolarPage() {
 
               <div className="w-full h-72 rounded-xl overflow-hidden">
                 <img
-                  src="/inverter.png"
+                  src="/solar/inverter.png"
                   alt="Solar Inverter"
                   className="w-full h-full object-cover"
                 />
@@ -334,7 +333,6 @@ export default function SolarPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              "Quality Products — partnerships with SIC Solar",
               "Full-Service Solutions — supply, installation & support",
               "Sustainability Focus — lower carbon footprint",
               "Expert Team — trained solar professionals",

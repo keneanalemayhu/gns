@@ -50,10 +50,10 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Email</h3>
               <p className="text-gray-600 dark:text-gray-300">
-                contact@gns-trading.com
+                contact@gnstradingplc.com
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-                sales@gns-trading.com
+                sales@gnstradingplc.com
               </p>
             </div>
 
@@ -77,26 +77,32 @@ export default function ContactPage() {
           </h2>
 
           <div className="max-w-3xl mx-auto bg-white dark:bg-neutral-800 p-10 rounded-xl shadow-sm border dark:border-neutral-700">
-            <form className="space-y-6">
+            <form
+              action="/contact.php"
+              method="POST"
+              className="space-y-6"
+            >
               {/* NAME */}
               <div className="flex flex-col">
                 <label className="mb-2 text-sm font-medium">Your Name</label>
                 <input
                   type="text"
+                  name="name"
                   className="p-3 rounded-lg bg-gray-100 dark:bg-neutral-700 outline-none border dark:border-neutral-600"
                   placeholder="Enter your name"
+                  required
                 />
               </div>
 
               {/* EMAIL */}
               <div className="flex flex-col">
-                <label className="mb-2 text-sm font-medium">
-                  Email Address
-                </label>
+                <label className="mb-2 text-sm font-medium">Email Address</label>
                 <input
                   type="email"
+                  name="email"
                   className="p-3 rounded-lg bg-gray-100 dark:bg-neutral-700 outline-none border dark:border-neutral-600"
                   placeholder="Enter your email"
+                  required
                 />
               </div>
 
@@ -104,13 +110,14 @@ export default function ContactPage() {
               <div className="flex flex-col">
                 <label className="mb-2 text-sm font-medium">Message</label>
                 <textarea
+                  name="message"
                   rows={5}
                   className="p-3 rounded-lg bg-gray-100 dark:bg-neutral-700 outline-none border dark:border-neutral-600"
                   placeholder="How can we help you?"
+                  required
                 ></textarea>
               </div>
 
-              {/* BUTTON */}
               <button
                 type="submit"
                 className="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg"
@@ -122,7 +129,7 @@ export default function ContactPage() {
         </section>
 
         {/* MAP SECTION */}
-        <section>
+        {/* <section>
           <h2 className="text-3xl font-bold text-center mb-6">
             Find Us on the Map
           </h2>
@@ -136,7 +143,7 @@ export default function ContactPage() {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
-        </section>
+        </section> */}
       </div>
     </main>
   );

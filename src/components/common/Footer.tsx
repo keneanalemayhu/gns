@@ -1,13 +1,15 @@
 // @/components/common/Footer.tsx
 
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer
       className="
         mt-32 
-        bg-black          /* Light mode background = black */
+        bg-black
         text-gray-300 
-        dark:bg-white     /* Dark mode background = white */
+        dark:bg-white
         dark:text-gray-800
         pt-16 pb-10
         border-t border-white/10 dark:border-gray-300
@@ -35,29 +37,27 @@ export default function Footer() {
           </h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="/solar" className="hover:text-blue-400 dark:hover:text-blue-600">
+              <Link href="/solar" className="hover:text-blue-400 dark:hover:text-blue-600">
                 Solar Division
-              </a>
+              </Link>
             </li>
+
             <li>
-              <a href="/construction" className="hover:text-blue-400 dark:hover:text-blue-600">
+              <Link href="/construction" className="hover:text-blue-400 dark:hover:text-blue-600">
                 Construction Equipments
-              </a>
+              </Link>
             </li>
+
             <li>
-              <a href="/medical" className="hover:text-blue-400 dark:hover:text-blue-600">
+              <Link href="/medical" className="hover:text-blue-400 dark:hover:text-blue-600">
                 Medical Equipments
-              </a>
+              </Link>
             </li>
-            {/* <li>
-              <a href="#" className="hover:text-blue-400 dark:hover:text-blue-600">
-                Industrial Chemicals
-              </a>
-            </li> */}
+
             <li>
-              <a href="/contact" className="hover:text-blue-400 dark:hover:text-blue-600">
-                Contact us
-              </a>
+              <Link href="/contact" className="hover:text-blue-400 dark:hover:text-blue-600">
+                Contact Us
+              </Link>
             </li>
           </ul>
         </div>
@@ -82,10 +82,10 @@ export default function Footer() {
               <span className="text-gray-400 dark:text-gray-600">Email:</span>
               <br />
               <a
-                href="mailto:info@gnstradingplc.com"
+                href="mailto:contact@gnstradingplc.com"
                 className="hover:text-blue-400 dark:hover:text-blue-600 break-all"
               >
-                info@gnstradingplc.com
+                contact@gnstradingplc.com
               </a>
             </li>
             <li>

@@ -1,11 +1,13 @@
-# Enable rewriting
 RewriteEngine On
-RewriteBase /
+Options -Multiviews
 
-# Allow direct access to existing files (images, css, js, etc.)
-RewriteCond %{REQUEST_FILENAME} -f [OR]
+# Serve existing files
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Serve existing directories
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Redirect all other routes to index.html for SPA support
+# SPA fallback — send everything else to index.html
 RewriteRule ^ index.html [L]

@@ -38,41 +38,30 @@ export default function ConstructionPage() {
 
           <div className="grid md:grid-cols-2 gap-12">
 
-            {/* Image Grid */}
-            <div className="grid grid-cols-2 gap-3">
-
+            <div>
               <img
-                src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg"
-                className="h-40 w-full object-cover rounded-xl"
-                alt="Workers PPE"
+                src="/construction/full.jpg"
+                className="w-full h-full object-cover rounded-xl"
+                alt="Construction Work"
               />
-
-              <img
-                src="https://images.pexels.com/photos/1216587/pexels-photo-1216587.jpeg"
-                className="h-40 w-full object-cover rounded-xl"
-                alt="Power Tools"
-              />
-
-              <img
-                src="https://images.pexels.com/photos/2381463/pexels-photo-2381463.jpeg"
-                className="h-40 w-full object-cover rounded-xl"
-                alt="Welding"
-              />
-
-              <img
-                src="https://images.pexels.com/photos/2566472/pexels-photo-2566472.jpeg"
-                className="h-40 w-full object-cover rounded-xl"
-                alt="Construction Materials"
-              />
-
             </div>
 
-            {/* Text */}
             <div className="space-y-4 text-lg leading-relaxed">
-              <p>GNS Trading supplies a full range of construction tools and equipment sourced from trusted manufacturers in China, Turkey, and Europe.</p>
-              <p>We provide durable tools for contractors, builders, plumbers, electricians, welders, and hardware shops across Ethiopia.</p>
-              <p>From power tools to safety gear, we focus on dependable quality and fast delivery.</p>
-              <p>Our mission is to help Ethiopia’s construction industry grow using premium, affordable and reliable tools designed for African working conditions.</p>
+              <p>
+                GNS Trading supplies a full range of construction tools and equipment sourced
+                from trusted manufacturers in China, Turkey, and Europe.
+              </p>
+              <p>
+                We provide durable tools for contractors, builders, plumbers, electricians,
+                welders, and hardware shops across Ethiopia.
+              </p>
+              <p>
+                From power tools to safety gear, we focus on dependable quality and fast delivery.
+              </p>
+              <p>
+                Our mission is to help Ethiopia’s construction industry grow using premium,
+                affordable and reliable tools designed for African working conditions.
+              </p>
             </div>
 
           </div>
@@ -87,7 +76,7 @@ export default function ConstructionPage() {
             {/* Product 1 */}
             <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-sm border dark:border-neutral-700">
               <img
-                src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg"
+                src="/construction/drill.webp"
                 className="h-48 w-full object-cover rounded-lg mb-4"
               />
               <h3 className="text-xl font-semibold mb-2">Electric Drill</h3>
@@ -97,7 +86,7 @@ export default function ConstructionPage() {
             {/* Product 2 */}
             <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-sm border dark:border-neutral-700">
               <img
-                src="https://images.pexels.com/photos/1216587/pexels-photo-1216587.jpeg"
+                src="/construction/angle_grinder.jpg"
                 className="h-48 w-full object-cover rounded-lg mb-4"
               />
               <h3 className="text-xl font-semibold mb-2">Angle Grinder</h3>
@@ -127,8 +116,8 @@ export default function ConstructionPage() {
             {/* CATEGORY: POWER TOOLS */}
             <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-sm border dark:border-neutral-700">
               <div className="grid grid-cols-2 gap-2 mb-3">
-                <img src="https://images.pexels.com/photos/1216587/pexels-photo-1216587.jpeg" className="h-24 w-full rounded-lg object-cover" />
-                <img src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg" className="h-24 w-full rounded-lg object-cover" />
+                <img src="/construction/angle_grinder.jpg" className="h-24 w-full rounded-lg object-cover" />
+                <img src="/construction/power_tools.jpg" className="h-24 w-full rounded-lg object-cover" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Power Tools</h3>
               <ul className="list-disc ml-5 space-y-2 text-sm">
@@ -155,8 +144,8 @@ export default function ConstructionPage() {
             {/* CATEGORY: ELECTRICAL SUPPLIES */}
             <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-sm border dark:border-neutral-700">
               <div className="grid grid-cols-2 gap-2 mb-3">
-                <img src="https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg" className="h-24 w-full rounded-lg object-cover" />
-                <img src="https://images.pexels.com/photos/573219/pexels-photo-573219.jpeg" className="h-24 w-full rounded-lg object-cover" />
+                <img src="/construction/switches.webp" className="h-24 w-full rounded-lg object-cover" />
+                <img src="/construction/extension.png" className="h-24 w-full rounded-lg object-cover" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Electrical Supplies</h3>
               <ul className="list-disc ml-5 space-y-2 text-sm">
@@ -169,8 +158,8 @@ export default function ConstructionPage() {
             {/* CATEGORY: PLUMBING */}
             <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-sm border dark:border-neutral-700">
               <div className="grid grid-cols-2 gap-2 mb-3">
-                <img src="https://images.pexels.com/photos/4239145/pexels-photo-4239145.jpeg" className="h-24 w-full rounded-lg object-cover" />
-                <img src="https://images.pexels.com/photos/4239142/pexels-photo-4239142.jpeg" className="h-24 w-full rounded-lg object-cover" />
+                <img src="/construction/pvc_ppr.webp" className="h-24 w-full rounded-lg object-cover" />
+                <img src="/construction/pipe.webp" className="h-24 w-full rounded-lg object-cover" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Plumbing & Fittings</h3>
               <ul className="list-disc ml-5 space-y-2 text-sm">
@@ -183,8 +172,8 @@ export default function ConstructionPage() {
             {/* CATEGORY: HAND TOOLS */}
             <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-sm border dark:border-neutral-700">
               <div className="grid grid-cols-2 gap-2 mb-3">
-                <img src="https://images.pexels.com/photos/4167170/pexels-photo-4167170.jpeg" className="h-24 w-full rounded-lg object-cover" />
-                <img src="https://images.pexels.com/photos/4792475/pexels-photo-4792475.jpeg" className="h-24 w-full rounded-lg object-cover" />
+                <img src="/construction/hammers.jpg" className="h-24 w-full rounded-lg object-cover" />
+                <img src="/construction/screwdrivers_wrenches.jpg" className="h-24 w-full rounded-lg object-cover" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Hand Tools</h3>
               <ul className="list-disc ml-5 space-y-2 text-sm">
@@ -197,8 +186,8 @@ export default function ConstructionPage() {
             {/* CATEGORY: PAINTING ACCESSORIES */}
             <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-sm border dark:border-neutral-700">
               <div className="grid grid-cols-2 gap-2 mb-3">
-                <img src="https://images.pexels.com/photos/5691791/pexels-photo-5691791.jpeg" className="h-24 w-full rounded-lg object-cover" />
-                <img src="https://images.pexels.com/photos/5691795/pexels-photo-5691795.jpeg" className="h-24 w-full rounded-lg object-cover" />
+                <img src="/construction/roller_tray.jpg" className="h-24 w-full rounded-lg object-cover" />
+                <img src="/construction/brush.jpg" className="h-24 w-full rounded-lg object-cover" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Painting Accessories</h3>
               <ul className="list-disc ml-5 space-y-2 text-sm">
