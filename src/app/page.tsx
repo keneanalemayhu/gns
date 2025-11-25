@@ -17,7 +17,7 @@ export default function HomePage() {
 
         <div className="relative z-10 text-center max-w-3xl px-6">
           <h1 className="text-5xl font-bold mb-4 text-white drop-shadow-lg">
-            A steady partner for confident decisions and smooth progress.
+            Simplifying Trade Amplifying Value
           </h1>
 
           <p className="text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed drop-shadow">

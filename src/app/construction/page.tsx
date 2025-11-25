@@ -76,7 +76,7 @@ export default function ConstructionPage() {
             {/* Product 1 */}
             <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-sm border dark:border-neutral-700">
               <img
-                src="/construction/drill.webp"
+                src="/construction/drill.jpg"
                 className="h-48 w-full object-cover rounded-lg mb-4"
               />
               <h3 className="text-xl font-semibold mb-2">Electric Drill</h3>

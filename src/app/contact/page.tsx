@@ -1,18 +1,56 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // @/app/contact/page.tsx
 
+"use client";
 import { PhoneCall, Mail, MapPin } from "lucide-react";
+import { toast } from "sonner";
+import { useState } from "react";
 
 export default function ContactPage() {
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setLoading(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/contact.php", {
+        method: "POST",
+        body: formData,
+        cache: "no-store",
+      });
+
+      let data: any;
+
+      try {
+        data = await response.json();
+      } catch {
+        toast.error("Server returned an unexpected response.");
+        setLoading(false);
+        return;
+      }
+
+      if (data.status === "success") {
+        toast.success("Message sent successfully!");
+        form.reset();
+      } else {
+        toast.error(data.message || "Failed to send message.");
+      }
+    } catch (err) {
+      toast.error("Unexpected server error");
+    }
+
+    setLoading(false);
+  }
+
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-neutral-900 text-gray-900 dark:text-gray-100">
       {/* HERO */}
       <section className="relative h-[45vh] w-full flex items-center justify-center overflow-hidden">
-        {/* <img
-          src="/contact_hero.png"
-          alt="Contact Us"
-          className="absolute inset-0 w-full h-full object-cover"
-        /> */}
-
         <div className="absolute inset-0 bg-black/40 dark:bg-black/50" />
 
         <div className="relative z-10 text-center px-6">
@@ -33,40 +71,30 @@ export default function ContactPage() {
 
           <div className="grid md:grid-cols-3 gap-10">
             {/* PHONE */}
-            <div className="bg-white dark:bg-neutral-800 p-8 rounded-xl border dark:border-neutral-700 shadow-sm text-center">
-              <div className="flex items-center justify-center w-14 h-14 mx-auto mb-4 rounded-full bg-blue-600/10">
-                <PhoneCall className="w-7 h-7 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Phone</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                +251 91 122 0468
-              </p>
-            </div>
+            <ContactCard
+              icon={<PhoneCall className="w-7 h-7 text-blue-600" />}
+              title="Phone"
+              content="+251 91 122 0468"
+            />
 
             {/* EMAIL */}
-            <div className="bg-white dark:bg-neutral-800 p-8 rounded-xl border dark:border-neutral-700 shadow-sm text-center">
-              <div className="flex items-center justify-center w-14 h-14 mx-auto mb-4 rounded-full bg-blue-600/10">
-                <Mail className="w-7 h-7 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Email</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                contact@gnstradingplc.com
-              </p>
-              <p className="text-gray-600 dark:text-gray-300">
-                sales@gnstradingplc.com
-              </p>
-            </div>
+            <ContactCard
+              icon={<Mail className="w-7 h-7 text-blue-600" />}
+              title="Email"
+              content={
+                <>
+                  contact@gnstradingplc.com <br />
+                  sales@gnstradingplc.com
+                </>
+              }
+            />
 
             {/* OFFICE */}
-            <div className="bg-white dark:bg-neutral-800 p-8 rounded-xl border dark:border-neutral-700 shadow-sm text-center">
-              <div className="flex items-center justify-center w-14 h-14 mx-auto mb-4 rounded-full bg-blue-600/10">
-                <MapPin className="w-7 h-7 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Office Address</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                General Winget, Addis Ababa Ethiopia
-              </p>
-            </div>
+            <ContactCard
+              icon={<MapPin className="w-7 h-7 text-blue-600" />}
+              title="Office Address"
+              content="General Winget, Addis Ababa Ethiopia"
+            />
           </div>
         </section>
 
@@ -77,34 +105,24 @@ export default function ContactPage() {
           </h2>
 
           <div className="max-w-3xl mx-auto bg-white dark:bg-neutral-800 p-10 rounded-xl shadow-sm border dark:border-neutral-700">
-            <form
-              action="/contact.php"
-              method="POST"
-              className="space-y-6"
-            >
+            <form onSubmit={handleSubmit} className="space-y-6">
               {/* NAME */}
-              <div className="flex flex-col">
-                <label className="mb-2 text-sm font-medium">Your Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  className="p-3 rounded-lg bg-gray-100 dark:bg-neutral-700 outline-none border dark:border-neutral-600"
-                  placeholder="Enter your name"
-                  required
-                />
-              </div>
+              <InputField
+                label="Your Name"
+                name="name"
+                type="text"
+                placeholder="Enter your name"
+                required
+              />
 
               {/* EMAIL */}
-              <div className="flex flex-col">
-                <label className="mb-2 text-sm font-medium">Email Address</label>
-                <input
-                  type="email"
-                  name="email"
-                  className="p-3 rounded-lg bg-gray-100 dark:bg-neutral-700 outline-none border dark:border-neutral-600"
-                  placeholder="Enter your email"
-                  required
-                />
-              </div>
+              <InputField
+                label="Email Address"
+                name="email"
+                type="email"
+                placeholder="Enter your email"
+                required
+              />
 
               {/* MESSAGE */}
               <div className="flex flex-col">
@@ -112,39 +130,79 @@ export default function ContactPage() {
                 <textarea
                   name="message"
                   rows={5}
-                  className="p-3 rounded-lg bg-gray-100 dark:bg-neutral-700 outline-none border dark:border-neutral-600"
-                  placeholder="How can we help you?"
                   required
+                  className="p-3 rounded-lg bg-gray-100 dark:bg-neutral-700 border dark:border-neutral-600 outline-none"
+                  placeholder="How can we help you?"
                 ></textarea>
               </div>
 
+              {/* BUTTON */}
               <button
                 type="submit"
-                className="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg"
+                disabled={loading}
+                className="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg disabled:bg-blue-400"
               >
-                Send Message
+                {loading ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
+                    Sending...
+                  </span>
+                ) : (
+                  "Send Message"
+                )}
               </button>
             </form>
           </div>
         </section>
-
-        {/* MAP SECTION */}
-        {/* <section>
-          <h2 className="text-3xl font-bold text-center mb-6">
-            Find Us on the Map
-          </h2>
-
-          <div className="w-full h-96 rounded-xl overflow-hidden shadow-lg border dark:border-neutral-700">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d5202.134422177871!2d38.714241076111705!3d9.056636991005831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMDMnMjMuOSJOIDM4wrA0MycwMC41IkU!5e1!3m2!1sen!2set!4v1763811063577!5m2!1sen!2set"
-              className="w-full h-full border-0"
-              loading="lazy"
-              allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </section> */}
       </div>
     </main>
+  );
+}
+
+
+function ContactCard({
+  icon,
+  title,
+  content,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  content: React.ReactNode;
+}) {
+  return (
+    <div className="bg-white dark:bg-neutral-800 p-8 rounded-xl border dark:border-neutral-700 shadow-sm text-center">
+      <div className="flex items-center justify-center w-14 h-14 mx-auto mb-4 rounded-full bg-blue-600/10">
+        {icon}
+      </div>
+      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <p className="text-gray-600 dark:text-gray-300 text-sm">{content}</p>
+    </div>
+  );
+}
+
+function InputField({
+  label,
+  name,
+  type,
+  required,
+  placeholder,
+}: {
+  label: string;
+  name: string;
+  type: string;
+  required?: boolean;
+  placeholder: string;
+}) {
+  return (
+    <div className="flex flex-col">
+      <label className="mb-2 text-sm font-medium">{label}</label>
+      <input
+        type={type}
+        name={name}
+        required={required}
+        placeholder={placeholder}
+        className="p-3 rounded-lg bg-gray-100 dark:bg-neutral-700 border dark:border-neutral-600 outline-none"
+      />
+    </div>
   );
 }

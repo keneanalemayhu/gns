@@ -19,8 +19,112 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GNS Trading | Solar & Industrial Solutions",
-  description: "Solar, Construction, Medical, and Industrial Chemical Solutions",
+  metadataBase: new URL("https://gnstradingplc.com"),
+  title:
+    "GNS Trading | Solar, Construction & Medical Equipment Supplier in Ethiopia",
+  description:
+    "GNS Trading — Simplifying Trade, Amplifying Value. Supplier of solar systems, construction tools, medical equipment, and industrial solutions in Ethiopia. Trusted products, proven quality.",
+  keywords: [
+    // Brand
+    "GNS Trading",
+    "GNS Trading Ethiopia",
+    "GNS Trading PLC",
+    "GNS solar Ethiopia",
+    "GNS construction Ethiopia",
+    "GNS medical Ethiopia",
+
+    // Solar
+    "solar Ethiopia",
+    "solar Addis Ababa",
+    "solar panels Ethiopia",
+    "solar panels Addis Ababa",
+    "solar energy Ethiopia",
+    "solar system installation Ethiopia",
+    "off-grid solar Ethiopia",
+    "on-grid solar Ethiopia",
+    "solar inverter Ethiopia",
+    "solar battery Ethiopia",
+    "solar suppliers Ethiopia",
+    "renewable energy Ethiopia",
+    "PV systems Ethiopia",
+    "Ethiopia solar distributor",
+    "East Africa solar equipment",
+
+    // Construction (broad)
+    "construction Ethiopia",
+    "construction Addis Ababa",
+    "construction tools Ethiopia",
+    "industrial tools Ethiopia",
+    "power tools Ethiopia",
+    "Ethiopia hardware supplier",
+    "building materials Ethiopia",
+    "contractor tools Ethiopia",
+    "hand tools Ethiopia",
+    "construction equipment Ethiopia",
+    "welding equipment Ethiopia",
+    "plumbing tools Ethiopia",
+    "electrician tools Ethiopia",
+    "hardware importer Ethiopia",
+
+    // Medical (broad)
+    "medical equipment Ethiopia",
+    "medical supplies Ethiopia",
+    "hospital equipment Ethiopia",
+    "diagnostic devices Ethiopia",
+    "clinical equipment Ethiopia",
+    "Ethiopia medical devices",
+    "medical importer Ethiopia",
+    "healthcare equipment Ethiopia",
+
+    // General trade + import keywords
+    "Ethiopia import company",
+    "Ethiopia equipment importer",
+    "industrial solutions Ethiopia",
+    "Ethiopia trading company",
+    "international sourcing Ethiopia",
+    "Addis Ababa industrial supplies",
+    "industrial chemicals Ethiopia",
+    "Ethiopian business suppliers",
+
+    // Geographic targeting
+    "Addis Ababa",
+    "Ethiopia",
+    "East Africa",
+    "East African suppliers",
+    "Ethiopian distributors",
+    "Addis Ababa suppliers",
+
+    // Motto
+    "Simplifying Trade Amplifying Value"
+  ],
+
+  openGraph: {
+    title:
+      "GNS Trading | Solar, Construction & Medical Equipment Supplier in Ethiopia",
+    description:
+      "GNS Trading supplies solar systems, construction equipment, medical devices, and industrial solutions across Ethiopia. Quality products and trusted global sourcing.",
+    siteName: "GNS Trading",
+    type: "website",
+    locale: "en_US",
+
+    images: [
+      {
+        url: "/logo.png",
+        width: 800,
+        height: 800,
+        alt: "GNS Trading Logo",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "GNS Trading | Solar, Construction & Medical Equipment Supplier in Ethiopia",
+    description:
+      "Premium solar, construction, and medical equipment for the Ethiopian market.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({
@@ -33,6 +137,40 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground min-h-screen`}
       >
+        {/* JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "GNS Trading PLC",
+              url: "https://gnstradingplc.com",
+              logo: "https://gnstradingplc.com/logo.png",
+              slogan: "Simplifying Trade, Amplifying Value",
+              description:
+                "Supplier of solar systems, construction tools, medical equipment, and industrial solutions in Ethiopia.",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Addis Ababa",
+                addressCountry: "Ethiopia",
+              },
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  telephone: "+251911220468",
+                  contactType: "customer service",
+                  areaServed: "ET",
+                },
+              ],
+              sameAs: [
+                "https://wa.me/251911220468",
+                "https://t.me/+251911220468",
+              ],
+            }),
+          }}
+        />
+
         <Providers>
           <Navigation />
           <main className="pt-24">{children}</main>

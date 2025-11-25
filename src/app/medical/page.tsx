@@ -37,47 +37,33 @@ export default function MedicalPage() {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-12">
-            {/* 4 images */}
-            <div className="grid grid-cols-2 gap-3">
+
+            <div className="w-full h-80 rounded-xl overflow-hidden shadow-md">
               <img
-                src="https://images.pexels.com/photos/6129040/pexels-photo-6129040.jpeg"
-                className="h-40 w-full rounded-xl object-cover"
-                alt="Diagnostic Devices"
-              />
-              <img
-                src="https://images.pexels.com/photos/8376177/pexels-photo-8376177.jpeg"
-                className="h-40 w-full rounded-xl object-cover"
-                alt="Medical PPE"
-              />
-              <img
-                src="https://images.pexels.com/photos/4226117/pexels-photo-4226117.jpeg"
-                className="h-40 w-full rounded-xl object-cover"
-                alt="Hospital Equipment"
-              />
-              <img
-                src="https://images.pexels.com/photos/8460044/pexels-photo-8460044.jpeg"
-                className="h-40 w-full rounded-xl object-cover"
-                alt="Laboratory Work"
+                src="/medical/about.jpg"
+                alt="Medical Equipment"
+                className="w-full h-full object-cover"
               />
             </div>
 
-            {/* About text */}
+            {/* ABOUT TEXT */}
             <div className="space-y-4 text-lg leading-relaxed">
               <p>
                 GNS Trading supplies high-quality medical equipment sourced from
                 certified global manufacturers. We serve hospitals, clinics,
-                pharmacies, diagnostic labs, NGOs, and home-care providers
-                across Ethiopia.
+                pharmacies, diagnostic labs, NGOs, and home-care providers across
+                Ethiopia.
               </p>
               <p>
-                Our catalogue includes diagnostic devices, PPE, consumables,
-                oxygen systems, patient-care equipment, and lab essentials.
+                Our catalogue includes diagnostic devices, PPE, consumables, oxygen
+                systems, patient-care equipment, and lab essentials.
               </p>
               <p>
                 We focus on reliability, affordability, and fast delivery —
                 ensuring our customers receive medical products they can trust.
               </p>
             </div>
+
           </div>
         </section>
 
@@ -91,7 +77,7 @@ export default function MedicalPage() {
             {/* Product 1 */}
             <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl border dark:border-neutral-700 shadow-sm">
               <img
-                src="https://images.pexels.com/photos/6129040/pexels-photo-6129040.jpeg"
+                src="/medical/thermometers.jpg"
                 className="h-48 w-full rounded-lg object-cover mb-4"
                 alt="Thermometer"
               />
@@ -107,7 +93,7 @@ export default function MedicalPage() {
             {/* Product 2 */}
             <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl border dark:border-neutral-700 shadow-sm">
               <img
-                src="https://images.pexels.com/photos/8376177/pexels-photo-8376177.jpeg"
+                src="/medical/bpm.jpg"
                 className="h-48 w-full rounded-lg object-cover mb-4"
                 alt="BP Monitor"
               />
@@ -122,7 +108,7 @@ export default function MedicalPage() {
             {/* Product 3 */}
             <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl border dark:border-neutral-700 shadow-sm">
               <img
-                src="https://images.pexels.com/photos/8460044/pexels-photo-8460044.jpeg"
+                src="/medical/lab.jpg"
                 className="h-48 w-full rounded-lg object-cover mb-4"
                 alt="Lab Equipment"
               />
@@ -182,8 +168,8 @@ export default function MedicalPage() {
               {
                 title: "Diagnostic Devices",
                 images: [
-                  "https://images.pexels.com/photos/6129040/pexels-photo-6129040.jpeg",
-                  "https://images.pexels.com/photos/4226117/pexels-photo-4226117.jpeg",
+                  "/medical/thermometers.jpg",
+                  "/medical/glucometers.jpg",
                 ],
                 items: [
                   "Digital Thermometers",
@@ -196,8 +182,8 @@ export default function MedicalPage() {
               {
                 title: "Patient Care",
                 images: [
-                  "https://images.pexels.com/photos/8460044/pexels-photo-8460044.jpeg",
-                  "https://images.pexels.com/photos/3993214/pexels-photo-3993214.jpeg",
+                  "/medical/patient_care.jpg",
+                  "/medical/random.jpg",
                 ],
                 items: [
                   "Nebulizers",
@@ -210,8 +196,8 @@ export default function MedicalPage() {
               {
                 title: "Consumables",
                 images: [
-                  "https://images.pexels.com/photos/8376177/pexels-photo-8376177.jpeg",
-                  "https://images.pexels.com/photos/3957985/pexels-photo-3957985.jpeg",
+                  "/medical/consumables.jpg",
+                  "/medical/consumables_2.jpg",
                 ],
                 items: [
                   "Examination Gloves",
@@ -224,7 +210,7 @@ export default function MedicalPage() {
               {
                 title: "Infection Control",
                 images: [
-                  "https://images.pexels.com/photos/3957985/pexels-photo-3957985.jpeg",
+                  "/medical/infection_control.jpg",
                   "https://images.pexels.com/photos/8376171/pexels-photo-8376171.jpeg",
                 ],
                 items: [
@@ -238,8 +224,8 @@ export default function MedicalPage() {
               {
                 title: "Laboratory Basics",
                 images: [
-                  "https://images.pexels.com/photos/8460044/pexels-photo-8460044.jpeg",
-                  "https://images.pexels.com/photos/4226117/pexels-photo-4226117.jpeg",
+                  "/medical/centrifuge_machines.jpg",
+                  "/medical/microscope.jpg",
                 ],
                 items: [
                   "Test Kits",
