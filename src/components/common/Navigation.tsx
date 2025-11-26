@@ -12,6 +12,7 @@ const navLinks = [
   { name: "Solar", href: "/solar" },
   { name: "Construction", href: "/construction" },
   { name: "Medical", href: "/medical" },
+  { name: "Industrial Chemicals", href: "/industrial" },
 ];
 
 /**

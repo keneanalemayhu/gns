@@ -349,7 +349,7 @@ export default function SolarPage() {
 
         {/* CTA SECTION */}
         <section className="text-center mt-20">
-          <h2 className="text-3xl font-bold mb-4">Need Medical Supplies?</h2>
+          <h2 className="text-3xl font-bold mb-4">Need Solar Supplies?</h2>
 
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-6">
             Contact us for quotations, availability, and bulk orders. We deliver

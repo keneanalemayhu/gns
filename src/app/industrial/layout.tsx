@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactLayout({
+export default function IndustrialLayout({
   children,
 }: {
   children: React.ReactNode;

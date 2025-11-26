@@ -55,6 +55,12 @@ export default function Footer() {
             </li>
 
             <li>
+              <Link href="/industrial" className="hover:text-blue-400 dark:hover:text-blue-600">
+                Industrial Chemicals
+              </Link>
+            </li>
+
+            <li>
               <Link href="/contact" className="hover:text-blue-400 dark:hover:text-blue-600">
                 Contact Us
               </Link>
