@@ -109,74 +109,45 @@ export default function IndustrialPage() {
           </div>
         </section>
 
-        {/* CATEGORIES */}
+        {/* CATEGORIES — UPDATED WITH TWO IMAGES PER CATEGORY */}
         <section>
           <h2 className="text-3xl font-bold mb-6">Industrial Chemical Categories</h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-12 place-items-center">
 
             {/* WATER TREATMENT */}
-            <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-sm border dark:border-neutral-700">
-              <h3 className="text-xl font-semibold mb-3">Water Treatment Chemicals</h3>
-              <ul className="list-disc ml-5 space-y-2 text-sm">
+            <div className="bg-white dark:bg-neutral-800 p-8 rounded-2xl shadow-md border dark:border-neutral-700 w-full max-w-xl">
+              <div className="grid grid-cols-2 gap-3 mb-5">
+                <img src="/industrial/chlorine_powder.jpg" className="h-32 w-full rounded-lg object-cover" />
+                <img src="/industrial/aluminum_sulfate.jpg" className="h-32 w-full rounded-lg object-cover" />
+              </div>
+
+              <h3 className="text-2xl font-semibold mb-4">Water Treatment Chemicals</h3>
+              <ul className="list-disc ml-6 space-y-2 text-base">
                 <li>Chlorine Powder</li>
                 <li>Aluminum Sulfate (Alum)</li>
                 <li>Caustic Soda (NaOH)</li>
               </ul>
             </div>
 
-            {/* FOOD & BEVERAGE */}
-            <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-sm border dark:border-neutral-700">
-              <h3 className="text-xl font-semibold mb-3">Food & Beverage Processing</h3>
-              <ul className="list-disc ml-5 space-y-2 text-sm">
-                <li>Cleaning Agents</li>
-                <li>Preservatives</li>
-                <li>Food-safe Additives</li>
-              </ul>
-            </div>
-
-            {/* PACKAGING ADDITIVES */}
-            <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-sm border dark:border-neutral-700">
-              <h3 className="text-xl font-semibold mb-3">Packaging Additives</h3>
-              <ul className="list-disc ml-5 space-y-2 text-sm">
-                <li>Stabilizers</li>
-                <li>Moisture Control Agents</li>
-                <li>Preservation Enhancers</li>
-              </ul>
-            </div>
-
             {/* PAINT & PLASTIC */}
-            <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-sm border dark:border-neutral-700">
-              <h3 className="text-xl font-semibold mb-3">Paint & Plastic Chemicals</h3>
-              <ul className="list-disc ml-5 space-y-2 text-sm">
+            <div className="bg-white dark:bg-neutral-800 p-8 rounded-2xl shadow-md border dark:border-neutral-700 w-full max-w-xl">
+              <div className="grid grid-cols-2 gap-3 mb-5">
+                <img src="/industrial/resins.jpg" className="h-32 w-full rounded-lg object-cover" />
+                <img src="/industrial/colorants.jpg" className="h-32 w-full rounded-lg object-cover" />
+              </div>
+
+              <h3 className="text-2xl font-semibold mb-4">Paint & Plastic Chemicals</h3>
+              <ul className="list-disc ml-6 space-y-2 text-base">
                 <li>Resins</li>
                 <li>Colorants</li>
                 <li>Solvents</li>
               </ul>
             </div>
 
-            {/* SOLVENTS */}
-            <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-sm border dark:border-neutral-700">
-              <h3 className="text-xl font-semibold mb-3">Solvents</h3>
-              <ul className="list-disc ml-5 space-y-2 text-sm">
-                <li>Industrial Cleaning Solvents</li>
-                <li>Paint Thinners</li>
-                <li>Alcohol-based Solvents</li>
-              </ul>
-            </div>
-
-            {/* RESINS & COLORANTS */}
-            <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-sm border dark:border-neutral-700">
-              <h3 className="text-xl font-semibold mb-3">Resins & Colorants</h3>
-              <ul className="list-disc ml-5 space-y-2 text-sm">
-                <li>Industrial Resins</li>
-                <li>Masterbatch Colorants</li>
-                <li>Plastic Pigments</li>
-              </ul>
-            </div>
-
           </div>
         </section>
+
 
         {/* CTA SECTION */}
         <section className="text-center mt-20">

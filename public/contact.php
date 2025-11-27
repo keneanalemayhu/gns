@@ -36,25 +36,106 @@ $adminBody = '
 <head>
 <meta charset="UTF-8">
 <style>
-  body { background:#f5f7fa; font-family:Arial; padding:20px; }
-  .box { background:#fff; padding:25px; border-radius:12px; 
-         border:1px solid #e5e7eb; max-width:600px; margin:auto; }
-  .title { font-size:22px; font-weight:bold; text-align:center; }
-  .label { font-weight:bold; margin-top:15px; color:#1f2937; }
-  .value { background:#f3f4f6; padding:10px; border-radius:8px; margin-top:5px; }
-  .logo { text-align:center; margin-bottom:20px; }
-  .logo img { height:70px; }
+  body {
+    background:#f5f7fa;
+    font-family:Arial, sans-serif;
+    padding:20px;
+  }
+
+  .box {
+    background:#ffffff;
+    padding:30px;
+    border-radius:14px;
+    border:1px solid #e5e7eb;
+    max-width:700px;
+    margin:auto;
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
+  }
+
+  /* HEADER */
+  .header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+  }
+
+  .logo-area {
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+
+  .logo-area img {
+    height:55px;
+  }
+
+  .company-name {
+    font-size:22px;
+    font-weight:bold;
+    color:#111827;
+    letter-spacing:0.5px;
+  }
+
+  .date {
+    font-size:14px;
+    color:#6b7280;
+    text-align:right;
+  }
+
+  /* CONTENT */
+  .title {
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:15px;
+    color:#1f2937;
+  }
+
+  .label {
+    font-weight:bold;
+    margin-top:20px;
+    color:#374151;
+    font-size:14px;
+  }
+
+  .value {
+    background:#f9fafb;
+    padding:12px;
+    border-radius:8px;
+    margin-top:6px;
+    border:1px solid #e5e7eb;
+    font-size:14px;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top:35px;
+    padding-top:15px;
+    border-top:1px solid #e5e7eb;
+    text-align:center;
+    font-size:12px;
+    color:#6b7280;
+    line-height:1.5;
+  }
 </style>
 </head>
 <body>
 
 <div class="box">
-  <div class="logo">
-    <img src="https://gnstradingplc.com/logo.png" alt="GNS Trading Logo">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo-area">
+      <img src="https://gnstradingplc.com/logo.png" alt="GNS Trading Logo">
+      <div class="company-name">GNS TRADING PLC</div>
+    </div>
+    <div class="date">'.date("F j, Y").'</div>
   </div>
 
-  <div class="title">📩 New Contact Form Submission</div>
+  <!-- TITLE -->
+  <div class="title">New Contact Form Submission</div>
 
+  <!-- FIELDS -->
   <div class="label">Name</div>
   <div class="value">'.htmlspecialchars($name).'</div>
 
@@ -64,10 +145,18 @@ $adminBody = '
   <div class="label">Message</div>
   <div class="value">'.nl2br(htmlspecialchars($message)).'</div>
 
+  <!-- FOOTER -->
+  <div class="footer">
+    GNS Trading PLC — Simplifying Trade, Amplifying Value<br>
+    General Winget, Addis Ababa, Ethiopia • +251 91 122 0468 • contact@gnstradingplc.com
+  </div>
+
 </div>
+
 </body>
 </html>
 ';
+
 
 // HEADERS FOR ADMIN EMAIL
 $adminHeaders  = "MIME-Version: 1.0\r\n";
@@ -90,39 +179,130 @@ $autoReplyBody = '
 <head>
 <meta charset="UTF-8">
 <style>
-  body { background:#f5f7fa; font-family:Arial; padding:20px; }
-  .box { background:#fff; padding:25px; border-radius:12px; 
-         border:1px solid #e5e7eb; max-width:600px; margin:auto; }
-  .header { text-align:center; }
-  .logo img { height:60px; }
-  .thanks { font-size:20px; font-weight:bold; margin-top:10px; }
-  .msg { margin-top:15px; line-height:1.6; }
-  .copy-title { margin-top:25px; font-size:15px; font-weight:bold; }
-  .copy-box { background:#f3f4f6; padding:15px; border-radius:8px; margin-top:5px; }
-  .footer { margin-top:25px; font-size:12px; text-align:center; color:#64748b; }
+  body {
+    background:#f5f7fa;
+    font-family:Arial, sans-serif;
+    padding:20px;
+  }
+
+  .box {
+    background:#ffffff;
+    padding:30px;
+    border-radius:14px;
+    border:1px solid #e5e7eb;
+    max-width:650px;
+    margin:auto;
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
+  }
+
+  /* HEADER */
+  .header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+  }
+
+  .logo-area {
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+
+  .logo-area img {
+    height:55px;
+  }
+
+  .company-name {
+    font-size:22px;
+    font-weight:bold;
+    color:#111827;
+    letter-spacing:0.5px;
+  }
+
+  .date {
+    font-size:14px;
+    color:#6b7280;
+    text-align:right;
+  }
+
+  /* CONTENT */
+  .thanks {
+    font-size:22px;
+    font-weight:bold;
+    color:#1f2937;
+    margin-bottom:10px;
+  }
+
+  .msg {
+    margin-top:10px;
+    line-height:1.7;
+    color:#374151;
+    font-size:15px;
+  }
+
+  .copy-title {
+    margin-top:25px;
+    font-size:16px;
+    font-weight:bold;
+    color:#1f2937;
+  }
+
+  .copy-box {
+    background:#f9fafb;
+    padding:15px;
+    border-radius:8px;
+    margin-top:8px;
+    border:1px solid #e5e7eb;
+    font-size:14px;
+    color:#374151;
+    line-height:1.6;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top:35px;
+    padding-top:15px;
+    border-top:1px solid #e5e7eb;
+    text-align:center;
+    font-size:12px;
+    color:#6b7280;
+    line-height:1.5;
+  }
 </style>
 </head>
 <body>
 
 <div class="box">
+
+  <!-- HEADER -->
   <div class="header">
-    <div class="logo"><img src="https://gnstradingplc.com/logo.png"></div>
-    <div class="thanks">Thank you for contacting GNS Trading!</div>
+    <div class="logo-area">
+      <img src="https://gnstradingplc.com/logo.png" alt="GNS Trading Logo">
+      <div class="company-name">GNS TRADING PLC</div>
+    </div>
+    <div class="date">'.date("F j, Y").'</div>
   </div>
+
+  <!-- THANK YOU TEXT -->
+  <div class="thanks">Thank you for contacting GNS Trading!</div>
 
   <p class="msg">
     Hello <strong>'.htmlspecialchars($name).'</strong>,<br><br>
-    We have received your message and our team will get back to you shortly.
-    Below is a copy of your message:
+    We appreciate you reaching out to us. Our team has received your message and we will respond shortly.<br><br>
+    Here is a copy of your message:
   </p>
 
+  <!-- USER MESSAGE -->
   <div class="copy-title">📄 Your Message</div>
   <div class="copy-box">'.nl2br(htmlspecialchars($message)).'</div>
 
+  <!-- FOOTER -->
   <div class="footer">
     GNS Trading PLC — Simplifying Trade, Amplifying Value<br>
-    General Winget, Addis Ababa, Ethiopia | +251 91 122 0468
+    General Winget, Addis Ababa, Ethiopia • +251 91 122 0468 • contact@gnstradingplc.com
   </div>
+
 </div>
 
 </body>

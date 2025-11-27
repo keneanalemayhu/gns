@@ -22,7 +22,7 @@ export default function HomePage() {
 
           <p className="text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed drop-shadow">
             Importing and supplying high-quality Solar Systems, Construction
-            Machinery, Medical Equipment, and Industrial Chemicals — built for
+            Equipments, Medical Equipment, and Industrial Chemicals — built for
             Ethiopia’s growing market.
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function HomePage() {
             contractors, and private buyers.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-3 gap-10 place-items-center">
             {[
               {
                 title: "Global Sourcing",
@@ -75,7 +75,7 @@ export default function HomePage() {
             Our Divisions
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-4 gap-10">
             {/* SOLAR */}
             <Link
               href="/solar"
@@ -108,6 +108,12 @@ export default function HomePage() {
                 desc: "Diagnostics • Lab equipment • Safety supplies",
                 img: "/medical.jpg",
                 href: "/medical",
+              },
+              {
+                name: "Industrial Chemicals",
+                desc: "Water Treatment Chemicals • Paint & Plastic Chemicals",
+                img: "/industrial_chemicals.jpg",
+                href: "/industrial",
               },
             ].map((item) => (
               <Link
@@ -187,7 +193,7 @@ export default function HomePage() {
             partnerships.
           </p>
         </section>
-        
+
       </div>
     </main>
   );

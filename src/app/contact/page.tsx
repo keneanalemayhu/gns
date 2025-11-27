@@ -83,8 +83,7 @@ export default function ContactPage() {
               title="Email"
               content={
                 <>
-                  contact@gnstradingplc.com <br />
-                  sales@gnstradingplc.com
+                  contact@gnstradingplc.com
                 </>
               }
             />
@@ -92,8 +91,8 @@ export default function ContactPage() {
             {/* OFFICE */}
             <ContactCard
               icon={<MapPin className="w-7 h-7 text-blue-600" />}
-              title="Office Address"
-              content="General Winget, Addis Ababa Ethiopia"
+              title="Address"
+              content="Addis Ababa Ethiopia"
             />
           </div>
         </section>

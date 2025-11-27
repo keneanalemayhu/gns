@@ -21,9 +21,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://gnstradingplc.com"),
   title:
-    "GNS Trading | Solar, Construction & Medical Equipment Supplier in Ethiopia",
+    "GNS Trading | Solar, Construction, Medical & Industrial Chemical Supplier in Ethiopia",
   description:
-    "GNS Trading — Simplifying Trade, Amplifying Value. Supplier of solar systems, construction tools, medical equipment, and industrial solutions in Ethiopia. Trusted products, proven quality.",
+    "GNS Trading — Simplifying Trade, Amplifying Value. Supplier of solar systems, construction tools, medical equipment, and industrial chemicals for water treatment, food processing, manufacturing, and paint/plastics in Ethiopia.",
   keywords: [
     // Brand
     "GNS Trading",
@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     "GNS solar Ethiopia",
     "GNS construction Ethiopia",
     "GNS medical Ethiopia",
+    "GNS industrial chemicals Ethiopia",
 
     // Solar
     "solar Ethiopia",
@@ -76,14 +77,29 @@ export const metadata: Metadata = {
     "medical importer Ethiopia",
     "healthcare equipment Ethiopia",
 
-    // General trade + import keywords
+    // Industrial Chemicals (NEW)
+    "industrial chemicals Ethiopia",
+    "chlorine powder Ethiopia",
+    "aluminum sulfate Ethiopia",
+    "caustic soda Ethiopia",
+    "water treatment chemicals Ethiopia",
+    "food processing chemicals Ethiopia",
+    "industrial solvents Ethiopia",
+    "paint chemicals Ethiopia",
+    "plastic additives Ethiopia",
+    "resins Ethiopia",
+    "colorants Ethiopia",
+    "packaging additives Ethiopia",
+    "chemical importer Ethiopia",
+    "Ethiopia industrial raw materials",
+
+    // General trade + imports
     "Ethiopia import company",
     "Ethiopia equipment importer",
     "industrial solutions Ethiopia",
     "Ethiopia trading company",
     "international sourcing Ethiopia",
     "Addis Ababa industrial supplies",
-    "industrial chemicals Ethiopia",
     "Ethiopian business suppliers",
 
     // Geographic targeting
@@ -95,18 +111,17 @@ export const metadata: Metadata = {
     "Addis Ababa suppliers",
 
     // Motto
-    "Simplifying Trade Amplifying Value"
+    "Simplifying Trade Amplifying Value",
   ],
 
   openGraph: {
     title:
-      "GNS Trading | Solar, Construction & Medical Equipment Supplier in Ethiopia",
+      "GNS Trading | Solar, Construction, Medical & Industrial Chemical Supplier in Ethiopia",
     description:
-      "GNS Trading supplies solar systems, construction equipment, medical devices, and industrial solutions across Ethiopia. Quality products and trusted global sourcing.",
+      "GNS Trading supplies solar systems, construction equipment, medical devices, and industrial chemicals across Ethiopia. High-quality products, reliable sourcing, nationwide delivery.",
     siteName: "GNS Trading",
     type: "website",
     locale: "en_US",
-
     images: [
       {
         url: "/logo.png",
@@ -120,9 +135,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "GNS Trading | Solar, Construction & Medical Equipment Supplier in Ethiopia",
+      "GNS Trading | Solar, Construction, Medical & Industrial Chemical Supplier in Ethiopia",
     description:
-      "Premium solar, construction, and medical equipment for the Ethiopian market.",
+      "Premium solar systems, construction tools, medical devices and industrial chemicals for the Ethiopian market.",
     images: ["/logo.png"],
   },
 };

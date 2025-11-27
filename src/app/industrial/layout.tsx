@@ -1,21 +1,27 @@
-// @/app/contact/layout.tsx
+// @/app/industrial/layout.tsx
 
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact GNS Trading | Solar, Construction & Medical Supplier in Ethiopia",
+  title:
+    "Industrial Chemicals in Ethiopia | Water Treatment, Food Processing, Paint Chemicals | GNS Trading",
   description:
-    "Get in touch with GNS Trading for solar systems, construction tools, medical devices and industrial solutions in Ethiopia.",
+    "High-grade industrial chemicals for water treatment, food and beverage processing, packaging additives, paint and plastic production, solvents, resins and more across Ethiopia.",
   keywords: [
-    "contact GNS Trading",
-    "GNS Trading Ethiopia",
-    "solar supplier Ethiopia",
-    "construction supplier Ethiopia"
+    "industrial chemicals Ethiopia",
+    "water treatment chemicals Ethiopia",
+    "chlorine powder Ethiopia",
+    "aluminum sulfate Ethiopia",
+    "caustic soda Ethiopia",
+    "food processing chemicals Ethiopia",
+    "paint chemicals Ethiopia",
+    "plastic additives Ethiopia",
+    "industrial supplier Ethiopia",
   ],
   openGraph: {
-    title: "Contact GNS Trading",
+    title: "Industrial Chemicals Supplier in Ethiopia | GNS Trading",
     description:
-      "Reach out to GNS Trading for product inquiries, quotations, and partnerships.",
+      "Reliable industrial chemicals sourced for Ethiopian industries — water treatment, manufacturing, food processing, plastics, packaging, and paint factories.",
     images: ["/logo.png"],
   },
 };
