@@ -7,6 +7,16 @@ export const metadata: Metadata = {
   description:
     "High-quality solar panels, inverters, batteries, and off-grid/on-grid systems for Ethiopia. Reliable solar energy solutions provided by GNS Trading.",
   keywords: [
+    // Amharic keywords
+    "የሶላር ኢትዮጵያ",
+    "የሶላር ፓነሎች አዲስ አበባ",
+    "የሶላር ኢንቨርተር ኢትዮጵያ",
+    "የሶላር ባትሪ ኢትዮጵያ",
+    "ከግሪድ ውጪ የሶላር ኢትዮጵያ",
+    "ታዳሽ ኃይል ኢትዮጵያ",
+    "ፒ.ቪ. ስርዓቶች ኢትዮጵያ",
+
+    // English keywords
     "solar Ethiopia",
     "solar panels Addis Ababa",
     "solar inverter Ethiopia",

@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   description:
     "Premium construction tools and equipment for contractors, builders, plumbers, and electricians in Ethiopia. Power tools, hand tools, safety gear, and more.",
   keywords: [
+    // Amharic keywords
+    "ግንባታ ኢትዮጵያ",
+    "የግንባታ መሣሪያዎች ኢትዮጵያ",
+    "ኃይል ያላቸው መሣሪያዎች አዲስ አበባ",
+    "የብየዳ መሣሪያዎች ኢትዮጵያ",
+    "የቧንቧ መሣሪያዎች ኢትዮጵያ",
+    "የሃርድዌር አቅራቢ ኢትዮጵያ",
+
+    // English keywords
     "construction Ethiopia",
     "construction tools Ethiopia",
     "power tools Addis Ababa",

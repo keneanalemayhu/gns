@@ -1,7 +1,6 @@
 // @/components/common/LanguageToggle.tsx
 
 "use client";
-import React from "react";
 import { Languages } from "lucide-react";
 import {
   DropdownMenu,

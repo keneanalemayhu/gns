@@ -1,7 +1,13 @@
-// @/components/common/LanguageContext.tsx
+// @/components/context/LanguageContext.tsx
 
 "use client";
-import { createContext, useContext, useState, useEffect, useCallback } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+} from "react";
 
 export type Language = "en" | "am";
 
@@ -10,22 +16,23 @@ interface LanguageContextType {
   setLanguage: (language: Language) => void;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextType | undefined>(
+  undefined,
+);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>(() => {
-    if (typeof window !== "undefined") {
-      const savedLanguage = localStorage.getItem("jireh-language");
-      return savedLanguage === "en" || savedLanguage === "am"
-        ? (savedLanguage as Language)
-        : "en";
-    }
-    return "en";
-  });
+  const [language, setLanguage] = useState<Language>("en");
 
   useEffect(() => {
-    document.documentElement.lang = language;
-  }, [language]);
+    const stored = localStorage.getItem("jireh-language");
+
+    if (stored === "en" || stored === "am") {
+      queueMicrotask(() => {
+        setLanguage(stored);
+        document.documentElement.lang = stored;
+      });
+    }
+  }, []);
 
   const updateLanguage = useCallback((newLanguage: Language) => {
     localStorage.setItem("jireh-language", newLanguage);
@@ -33,12 +40,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     setLanguage(newLanguage);
   }, []);
 
-  if (language === null) {
-    return null;
-  }
-
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: updateLanguage }}>
+    <LanguageContext.Provider
+      value={{ language, setLanguage: updateLanguage }}
+    >
       {children}
     </LanguageContext.Provider>
   );
@@ -46,6 +51,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
-  if (!context) throw new Error("useLanguage must be used within LanguageProvider");
+  if (!context)
+    throw new Error("useLanguage must be used within LanguageProvider");
   return context;
 };

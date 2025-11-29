@@ -1,17 +1,22 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 // @/app/medical/page.tsx
 
+'use client';
 import Link from "next/link";
+import { useT } from "@/lib/translate";
 
 export default function MedicalPage() {
+  const t = useT();
+
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-neutral-900 text-gray-900 dark:text-gray-100">
       {/* HERO */}
       <section className="relative h-[60vh] w-full flex items-center justify-center overflow-hidden">
         <img
-          src="https://images.pexels.com/photos/4226122/pexels-photo-4226122.jpeg"
-          alt="Medical Equipment"
+          src="/medical.jpg"
+          alt={t("medical.hero.alt")}
           className="absolute inset-0 w-full h-full object-cover"
         />
 
@@ -19,263 +24,144 @@ export default function MedicalPage() {
 
         <div className="relative z-10 text-center px-6">
           <h1 className="text-5xl font-bold mb-4 text-white drop-shadow-lg">
-            Medical Equipment & Supplies
+            {t("medical.hero.title")}
           </h1>
+
           <p className="text-lg max-w-2xl mx-auto text-gray-200 drop-shadow">
-            Reliable diagnostic devices, patient-care equipment, consumables,
-            and lab essentials for hospitals, clinics, pharmacies & NGOs across
-            Ethiopia.
+            {t("medical.hero.subtitle")}
           </p>
         </div>
       </section>
 
       <div className="max-w-7xl mx-auto px-6 py-20 space-y-32">
-        {/* ABOUT + IMAGE GRID */}
+        {/* ABOUT */}
         <section>
-          <h2 className="text-3xl font-bold mb-6">
-            About Our Medical Division
-          </h2>
+          <h2 className="text-3xl font-bold mb-6">{t("medical.about.title")}</h2>
 
           <div className="grid md:grid-cols-2 gap-12">
-
             <div className="w-full h-80 rounded-xl overflow-hidden shadow-md">
               <img
                 src="/medical/about.jpg"
-                alt="Medical Equipment"
+                alt={t("medical.about.imageAlt")}
                 className="w-full h-full object-cover"
               />
             </div>
 
-            {/* ABOUT TEXT */}
             <div className="space-y-4 text-lg leading-relaxed">
-              <p>
-                GNS Trading supplies high-quality medical equipment sourced from
-                certified global manufacturers. We serve hospitals, clinics,
-                pharmacies, diagnostic labs, NGOs, and home-care providers across
-                Ethiopia.
-              </p>
-              <p>
-                Our catalogue includes diagnostic devices, PPE, consumables, oxygen
-                systems, patient-care equipment, and lab essentials.
-              </p>
-              <p>
-                We focus on reliability, affordability, and fast delivery —
-                ensuring our customers receive medical products they can trust.
-              </p>
+              <p>{t("medical.about.p1")}</p>
+              <p>{t("medical.about.p2")}</p>
+              <p>{t("medical.about.p3")}</p>
             </div>
-
           </div>
         </section>
 
         {/* FEATURED PRODUCTS */}
         <section>
           <h2 className="text-3xl font-bold mb-10">
-            Featured Medical Products
+            {t("medical.featured.title")}
           </h2>
 
           <div className="grid md:grid-cols-3 gap-10">
-            {/* Product 1 */}
-            <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl border dark:border-neutral-700 shadow-sm">
-              <img
-                src="/medical/thermometers.jpg"
-                className="h-48 w-full rounded-lg object-cover mb-4"
-                alt="Thermometer"
-              />
-              <h3 className="text-xl font-semibold mb-2">
-                Digital Thermometer
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
-                Fast-reading, accurate thermometers suitable for clinics and
-                hospitals.
-              </p>
-            </div>
-
-            {/* Product 2 */}
-            <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl border dark:border-neutral-700 shadow-sm">
-              <img
-                src="/medical/bpm.jpg"
-                className="h-48 w-full rounded-lg object-cover mb-4"
-                alt="BP Monitor"
-              />
-              <h3 className="text-xl font-semibold mb-2">
-                Blood Pressure Monitor
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
-                High-precision BP monitors for accurate patient diagnosis.
-              </p>
-            </div>
-
-            {/* Product 3 */}
-            <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl border dark:border-neutral-700 shadow-sm">
-              <img
-                src="/medical/lab.jpg"
-                className="h-48 w-full rounded-lg object-cover mb-4"
-                alt="Lab Equipment"
-              />
-              <h3 className="text-xl font-semibold mb-2">Laboratory Set</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
-                Essential equipment for diagnostic laboratories and research
-                centers.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* WHY CHOOSE US */}
-        <section>
-          <h2 className="text-3xl font-bold mb-6">Why Choose Us?</h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Certified Equipment",
-                desc: "All medical devices meet international safety and testing standards.",
-              },
-              {
-                title: "Wide Healthcare Catalogue",
-                desc: "Diagnostics, patient care, PPE, consumables, lab devices & more.",
-              },
-              {
-                title: "Trusted by Hospitals & NGOs",
-                desc: "Reliable supply to public/private hospitals and humanitarian organizations.",
-              },
-              {
-                title: "Fast Delivery Nationwide",
-                desc: "Efficient logistics to Addis Ababa and all regions.",
-              },
-            ].map((i) => (
+            {t("medical.featured.items").map((item: any) => (
               <div
-                key={i.title}
-                className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-sm border dark:border-neutral-700"
+                key={item.title}
+                className="bg-white dark:bg-neutral-800 p-6 rounded-xl border dark:border-neutral-700 shadow-sm"
               >
-                <h3 className="text-xl font-semibold mb-2">{i.title}</h3>
+                <img
+                  src={item.img}
+                  alt={item.alt}
+                  className="h-48 w-full rounded-lg object-cover mb-4"
+                />
+
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+
                 <p className="text-sm text-gray-600 dark:text-gray-300">
-                  {i.desc}
+                  {item.desc}
                 </p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* CATEGORIES WITH IMAGES */}
+        {/* WHY CHOOSE US */}
         <section>
           <h2 className="text-3xl font-bold mb-6">
-            Medical Equipment Categories
+            {t("medical.whyChooseUs.title")}
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {[
-              {
-                title: "Diagnostic Devices",
-                images: [
-                  "/medical/thermometers.jpg",
-                  "/medical/glucometers.jpg",
-                ],
-                items: [
-                  "Digital Thermometers",
-                  "Blood Pressure Monitors",
-                  "Glucometers",
-                  "Pulse Oximeters",
-                  "Stethoscopes",
-                ],
-              },
-              {
-                title: "Patient Care",
-                images: [
-                  "/medical/patient_care.jpg",
-                  "/medical/random.jpg",
-                ],
-                items: [
-                  "Nebulizers",
-                  "Suction Machines",
-                  "Oxygen Concentrators",
-                  "Wheelchairs",
-                  "Hospital Beds",
-                ],
-              },
-              {
-                title: "Consumables",
-                images: [
-                  "/medical/consumables.jpg",
-                  "/medical/consumables_2.jpg",
-                ],
-                items: [
-                  "Examination Gloves",
-                  "Surgical Gloves",
-                  "Syringes",
-                  "Alcohol Swabs",
-                  "Test Strips",
-                ],
-              },
-              {
-                title: "Infection Control",
-                images: [
-                  "/medical/infection_control.jpg",
-                  "https://images.pexels.com/photos/8376171/pexels-photo-8376171.jpeg",
-                ],
-                items: [
-                  "Masks",
-                  "Sanitizers",
-                  "Disinfectants",
-                  "Disposable Gowns",
-                  "Face Masks",
-                ],
-              },
-              {
-                title: "Laboratory Basics",
-                images: [
-                  "/medical/centrifuge_machines.jpg",
-                  "/medical/microscope.jpg",
-                ],
-                items: [
-                  "Test Kits",
-                  "Sample Cups",
-                  "Centrifuge Machines",
-                  "Microscopes",
-                ],
-              },
-            ].map((cat) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {t("medical.whyChooseUs.items").map((item: any) => (
               <div
-                key={cat.title}
-                className="bg-white dark:bg-neutral-800 p-6 rounded-xl border dark:border-neutral-700 shadow-sm"
+                key={item.title}
+                className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-sm border dark:border-neutral-700"
               >
-                {/* Image row */}
-                <div className="grid grid-cols-2 gap-2 mb-3">
-                  <img
-                    src={cat.images[0]}
-                    className="h-24 w-full rounded-lg object-cover"
-                  />
-                  <img
-                    src={cat.images[1]}
-                    className="h-24 w-full rounded-lg object-cover"
-                  />
-                </div>
-
-                <h3 className="text-xl font-semibold mb-3">{cat.title}</h3>
-                <ul className="list-disc ml-5 space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                  {cat.items.map((i) => (
-                    <li key={i}>{i}</li>
-                  ))}
-                </ul>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* CTA SECTION */}
+        {/* CATEGORIES */}
+        <section>
+          <h2 className="text-3xl font-bold mb-6">
+            {t("medical.categories.title")}
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {[
+              "diagnostic",
+              "patientCare",
+              "consumables",
+              "infectionControl",
+              "labBasics",
+            ].map((key) => {
+              const cat = t(`medical.categories.${key}`);
+
+              return (
+                <div
+                  key={key}
+                  className="bg-white dark:bg-neutral-800 p-6 rounded-xl border dark:border-neutral-700 shadow-sm"
+                >
+                  <div className="grid grid-cols-2 gap-2 mb-3">
+                    <img
+                      src={cat.images[0]}
+                      className="h-24 w-full rounded-lg object-cover"
+                    />
+                    <img
+                      src={cat.images[1]}
+                      className="h-24 w-full rounded-lg object-cover"
+                    />
+                  </div>
+
+                  <h3 className="text-xl font-semibold mb-3">{cat.title}</h3>
+
+                  <ul className="list-disc ml-5 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                    {cat.items.map((item: string) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* CTA */}
         <section className="text-center mt-20">
-          <h2 className="text-3xl font-bold mb-4">Need Medical Supplies?</h2>
+          <h2 className="text-3xl font-bold mb-4">{t("medical.cta.title")}</h2>
 
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-6">
-            Contact us for quotations, availability, and bulk orders. We deliver
-            reliably to hospitals, clinics, pharmacies & NGOs nationwide.
+            {t("medical.cta.desc")}
           </p>
 
           <Link
             href="/contact"
             className="inline-block px-10 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 shadow-lg transition text-lg"
           >
-            Contact Us Today
+            {t("medical.cta.button")}
           </Link>
         </section>
       </div>

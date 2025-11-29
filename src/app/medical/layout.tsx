@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   description:
     "Reliable medical equipment and clinical devices for hospitals, clinics, and laboratories in Ethiopia. Quality assured medical supplies.",
   keywords: [
+    // Amharic keywords
+    "የሕክምና መሣሪያዎች ኢትዮጵያ",
+    "የሕክምና አቅርቦቶች ኢትዮጵያ",
+    "የክሊኒክ መሣሪያዎች ኢትዮጵያ",
+    "የሆስፒታል መሣሪያዎች ኢትዮጵያ",
+    "የምርመራ መሣሪያዎች ኢትዮጵያ",
+
+    // English keywords
     "medical equipment Ethiopia",
     "medical supplies Ethiopia",
     "clinical devices Ethiopia",

@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   description:
     "Get in touch with GNS Trading for solar systems, construction tools, medical devices and industrial solutions in Ethiopia.",
   keywords: [
+    // Amharic keywords
+    "ጂኤንኤስ ግሬዲንግን ያግኙ",
+    "ጂኤንኤስ ግሬዲንግ ኢትዮጵያ",
+    "የፀሐይ ኃይል አቅራቢ ኢትዮጵያ",
+    "የግንባታ አቅራቢ ኢትዮጵያ",
+
+    // English keywords
     "contact GNS Trading",
     "GNS Trading Ethiopia",
     "solar supplier Ethiopia",

@@ -8,6 +8,18 @@ export const metadata: Metadata = {
   description:
     "High-grade industrial chemicals for water treatment, food and beverage processing, packaging additives, paint and plastic production, solvents, resins and more across Ethiopia.",
   keywords: [
+    // Amharic keywords
+    "የኢንዱስትሪ ኬሚካሎች ኢትዮጵያ",
+    "የውሃ ማጣሪያ ኬሚካሎች ኢትዮጵያ",
+    "ክሎሪን ፓውደር ኢትዮጵያ",
+    "አሉሚኒየም ሰልፌት ኢትዮጵያ",
+    "ካውስቲክ ሶዳ ኢትዮጵያ",
+    "የምግብ ማቀነባበሪያ ኬሚካሎች ኢትዮጵያ",
+    "የቀለም ኬሚካሎች ኢትዮጵያ",
+    "የፕላስቲክ ተጨማሪዎች ኢትዮጵያ",
+    "የኢንዱስትሪ አቅራቢ ኢትዮጵያ",
+
+    // English keywords
     "industrial chemicals Ethiopia",
     "water treatment chemicals Ethiopia",
     "chlorine powder Ethiopia",

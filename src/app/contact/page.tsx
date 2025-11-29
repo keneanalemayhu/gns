@@ -6,9 +6,11 @@
 import { PhoneCall, Mail, MapPin } from "lucide-react";
 import { toast } from "sonner";
 import { useState } from "react";
+import { useT } from "@/lib/translate";
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
+  const t = useT();
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -29,19 +31,19 @@ export default function ContactPage() {
       try {
         data = await response.json();
       } catch {
-        toast.error("Server returned an unexpected response.");
+        toast.error(t("contact.form.badResponse"));
         setLoading(false);
         return;
       }
 
       if (data.status === "success") {
-        toast.success("Message sent successfully!");
+        toast.success(t("contact.form.success"));
         form.reset();
       } else {
-        toast.error(data.message || "Failed to send message.");
+        toast.error(data.message || t("contact.form.error"));
       }
     } catch (err) {
-      toast.error("Unexpected server error");
+      toast.error(t("contact.form.unexpected"));
     }
 
     setLoading(false);
@@ -55,11 +57,10 @@ export default function ContactPage() {
 
         <div className="relative z-10 text-center px-6">
           <h1 className="text-5xl font-bold mb-4 text-white drop-shadow-lg">
-            Contact Us
+            {t("contact.hero.title")}
           </h1>
           <p className="text-lg max-w-2xl mx-auto text-gray-200 drop-shadow">
-            Get in touch for inquiries, quotations, partnerships, and product
-            information.
+            {t("contact.hero.subtitle")}
           </p>
         </div>
       </section>
@@ -67,32 +68,30 @@ export default function ContactPage() {
       <div className="max-w-7xl mx-auto px-6 py-20 space-y-32">
         {/* CONTACT INFO */}
         <section>
-          <h2 className="text-3xl font-bold text-center mb-12">Get in Touch</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            {t("contact.getInTouchTitle")}
+          </h2>
 
           <div className="grid md:grid-cols-3 gap-10">
             {/* PHONE */}
             <ContactCard
               icon={<PhoneCall className="w-7 h-7 text-blue-600" />}
-              title="Phone"
-              content="+251 91 122 0468"
+              title={t("contact.cards.phone.title")}
+              content={t("contact.cards.phone.content")}
             />
 
             {/* EMAIL */}
             <ContactCard
               icon={<Mail className="w-7 h-7 text-blue-600" />}
-              title="Email"
-              content={
-                <>
-                  contact@gnstradingplc.com
-                </>
-              }
+              title={t("contact.cards.email.title")}
+              content={t("contact.cards.email.content")}
             />
 
-            {/* OFFICE */}
+            {/* ADDRESS */}
             <ContactCard
               icon={<MapPin className="w-7 h-7 text-blue-600" />}
-              title="Address"
-              content="Addis Ababa Ethiopia"
+              title={t("contact.cards.address.title")}
+              content={t("contact.cards.address.content")}
             />
           </div>
         </section>
@@ -100,38 +99,40 @@ export default function ContactPage() {
         {/* CONTACT FORM */}
         <section>
           <h2 className="text-3xl font-bold mb-10 text-center">
-            Send Us a Message
+            {t("contact.form.sectionTitle")}
           </h2>
 
           <div className="max-w-3xl mx-auto bg-white dark:bg-neutral-800 p-10 rounded-xl shadow-sm border dark:border-neutral-700">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* NAME */}
               <InputField
-                label="Your Name"
+                label={t("contact.form.nameLabel")}
                 name="name"
                 type="text"
-                placeholder="Enter your name"
+                placeholder={t("contact.form.namePlaceholder")}
                 required
               />
 
               {/* EMAIL */}
               <InputField
-                label="Email Address"
+                label={t("contact.form.emailLabel")}
                 name="email"
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t("contact.form.emailPlaceholder")}
                 required
               />
 
               {/* MESSAGE */}
               <div className="flex flex-col">
-                <label className="mb-2 text-sm font-medium">Message</label>
+                <label className="mb-2 text-sm font-medium">
+                  {t("contact.form.messageLabel")}
+                </label>
                 <textarea
                   name="message"
                   rows={5}
                   required
                   className="p-3 rounded-lg bg-gray-100 dark:bg-neutral-700 border dark:border-neutral-600 outline-none"
-                  placeholder="How can we help you?"
+                  placeholder={t("contact.form.messagePlaceholder")}
                 ></textarea>
               </div>
 
@@ -144,10 +145,10 @@ export default function ContactPage() {
                 {loading ? (
                   <span className="flex items-center justify-center gap-2">
                     <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
-                    Sending...
+                    {t("contact.form.sending")}
                   </span>
                 ) : (
-                  "Send Message"
+                  t("contact.form.submit")
                 )}
               </button>
             </form>
@@ -157,7 +158,6 @@ export default function ContactPage() {
     </main>
   );
 }
-
 
 function ContactCard({
   icon,

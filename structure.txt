@@ -1,0 +1,111 @@
+gns/
+├── public/
+│   ├── construction/
+│   │   ├── angle_grinder.jpg
+│   │   ├── brush.jpg
+│   │   ├── cables.jpg
+│   │   ├── construction.png
+│   │   ├── drill.jpg
+│   │   ├── extension.png
+│   │   ├── full.jpg
+│   │   ├── hammers.jpg
+│   │   ├── pipe.webp
+│   │   ├── power_tools.jpg
+│   │   ├── pvc_ppr.webp
+│   │   ├── roller_tray.jpg
+│   │   ├── screwdrivers_wrenches.jpg
+│   │   └── switches.webp
+│   ├── industrial/
+│   │   ├── aluminum_sulfate.jpg
+│   │   ├── chlorine_powder.jpg
+│   │   ├── colorants.jpg
+│   │   ├── hero.jpg
+│   │   ├── industrial_chemicals.jpg
+│   │   ├── naoh.jpg
+│   │   └── resins.jpg
+│   ├── medical/
+│   │   ├── about.jpg
+│   │   ├── bpm.jpg
+│   │   ├── centrifuge_machines.jpg
+│   │   ├── consumables_2.jpg
+│   │   ├── consumables.jpg
+│   │   ├── glucometers.jpg
+│   │   ├── infection_control.jpg
+│   │   ├── lab.jpg
+│   │   ├── medical.jpg
+│   │   ├── microscope.jpg
+│   │   ├── patient_care.jpg
+│   │   ├── random.jpg
+│   │   └── thermometers.jpg
+│   ├── solar/
+│   │   ├── battery.png
+│   │   ├── car_port.png
+│   │   ├── car_port2.png
+│   │   ├── east_west.png
+│   │   ├── east_west2.jpg
+│   │   ├── inverter.png
+│   │   ├── solar_install.jpg
+│   │   ├── solar_panel.png
+│   │   ├── solar_tilt.png
+│   │   └── solar.jpg
+│   ├── .htaccess
+│   ├── construction.png
+│   ├── contact.php
+│   ├── hero.png
+│   ├── industrial_chemicals.jpg
+│   ├── logo.png
+│   ├── medical.jpg
+│   └── solar.jpg
+├── src/
+│   ├── app/
+│   │   ├── construction/
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── contact/
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── industrial/
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── medical/
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── solar/
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── providers.tsx
+│   ├── components/
+│   │   ├── common/
+│   │   │   ├── Footer.tsx
+│   │   │   ├── Header.tsx
+│   │   │   ├── LanguageToggle.tsx
+│   │   │   ├── Navigation.tsx
+│   │   │   └── ThemeToggle.tsx
+│   │   ├── context/
+│   │   │   ├── LanguageContext.tsx
+│   │   │   └── ThemeContext.tsx
+│   │   └── ui/
+│   │       ├── button.tsx
+│   │       ├── dropdown-menu.tsx
+│   │       └── sonner.tsx
+│   ├── lib/
+│   │   ├── translate.ts
+│   │   └── utils.ts
+│   └── translations/
+│       ├── am.ts
+│       ├── en.ts
+│       └── index.ts
+├── .gitignore
+├── components.json
+├── eslint.config.mjs
+├── next-env.d.ts
+├── next-sitemap.config.js
+├── next.config.ts
+├── package.json
+├── postcss.config.mjs
+├── README.md
+└── tsconfig.json
