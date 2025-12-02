@@ -1,0 +1,24 @@
+// @/app/en/industrial/layout.tsx
+
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Industrial Chemicals in Ethiopia | Water Treatment, Food Processing, Paint Chemicals | GNS Trading",
+  description:
+    "High-grade industrial chemicals for water treatment, food and beverage processing, packaging additives, paint and plastic production, solvents, resins and more across Ethiopia.",
+  openGraph: {
+    title: "Industrial Chemicals Supplier in Ethiopia | GNS Trading",
+    description:
+      "Reliable industrial chemicals sourced for Ethiopian industries — water treatment, manufacturing, food processing, plastics, packaging, and paint factories.",
+    images: ["/logo.png"],
+  },
+};
+
+export default function IndustrialLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

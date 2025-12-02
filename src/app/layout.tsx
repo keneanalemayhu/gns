@@ -5,8 +5,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { Providers } from "./providers";
-import Navigation from "@/components/common/Navigation";
-import Footer from "@/components/common/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,193 +18,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gnstradingplc.com"),
+
   title:
     "GNS Trading | Solar, Construction, Medical & Industrial Chemical Supplier in Ethiopia",
+
   description:
-    "GNS Trading — Simplifying Trade, Amplifying Value. Supplier of solar systems, construction tools, medical equipment, and industrial chemicals for water treatment, food processing, manufacturing, and paint/plastics in Ethiopia.",
-  keywords: [
-    // የኩባንያ ስም
-    "ጂ.ኤን.ኤስ ትሬዲንግ",
-    "ጂ.ኤን.ኤስ ትሬዲንግ ኢትዮጵያ",
-    "ጂ.ኤን.ኤስ ትሬዲንግ ኃ.የተ.የግ.ማ",
-    "ጂ.ኤን.ኤስ የፀሐይ ኃይል ኢትዮጵያ",
-    "ጂ.ኤን.ኤስ ግንባታ ኢትዮጵያ",
-    "ጂ.ኤን.ኤስ ሕክምና ኢትዮጵያ",
-    "ጂ.ኤን.ኤስ የኢንዱስትሪ ኬሚካሎች ኢትዮጵያ",
-
-    // የሶላር
-    "የፀሐይ ኃይል ኢትዮጵያ",
-    "የፀሐይ ኃይል አዲስ አበባ",
-    "የፀሐይ ኃይል ፓነሎች ኢትዮጵያ",
-    "የፀሐይ ኃይል ፓነሎች አዲስ አበባ",
-    "የፀሐይ ኃይል ኢትዮጵያ",
-    "የፀሐይ ኃይል ስርዓት ተከላ ኢትዮጵያ",
-    "ከግሪድ ውጪ የፀሐይ ኃይል ኢትዮጵያ",
-    "ከግሪድ ጋር የተገናኘ የፀሐይ ኃይል ኢትዮጵያ",
-    "የፀሐይ ኃይል ኢንቨርተር ኢትዮጵያ",
-    "የፀሐይ ኃይል ባትሪ ኢትዮጵያ",
-    "የፀሐይ ኃይል አቅራቢዎች ኢትዮጵያ",
-    "ታዳሽ ኃይል ኢትዮጵያ",
-    "ፒ.ቪ. ስርዓቶች ኢትዮጵያ",
-    "የኢትዮጵያ የፀሐይ ኃይል አከፋፋይ",
-    "የምስራቅ አፍሪካ የፀሐይ ኃይል መሣሪያዎች",
-
-    // ግንባታ
-    "ግንባታ ኢትዮጵያ",
-    "ግንባታ አዲስ አበባ",
-    "የግንባታ መሣሪያዎች ኢትዮጵያ",
-    "የኢንዱስትሪ መሣሪያዎች ኢትዮጵያ",
-    "ኃይል ያላቸው መሣሪያዎች ኢትዮጵያ",
-    "የኢትዮጵያ ሃርድዌር አቅራቢ",
-    "የግንባታ ቁሳቁሶች ኢትዮጵያ",
-    "የኮንትራክተር መሣሪያዎች ኢትዮጵያ",
-    "የእጅ መሣሪያዎች ኢትዮጵያ",
-    "የግንባታ መሣሪያዎች ኢትዮጵያ",
-    "የብየዳ መሣሪያዎች ኢትዮጵያ",
-    "የቧንቧ መሣሪያዎች ኢትዮጵያ",
-    "የኤሌክትሪሻን መሣሪያዎች ኢትዮጵያ",
-    "የሃርድዌር አስመጪ ኢትዮጵያ",
-
-    // ሕክምና
-    "የሕክምና መሣሪያዎች ኢትዮጵያ",
-    "የሕክምና አቅርቦቶች ኢትዮጵያ",
-    "የሆስፒታል መሣሪያዎች ኢትዮጵያ",
-    "የምርመራ መሣሪያዎች ኢትዮጵያ",
-    "የክሊኒክ መሣሪያዎች ኢትዮጵያ",
-    "የኢትዮጵያ የሕክምና መሣሪያዎች",
-    "የሕክምና አስመጪ ኢትዮጵያ",
-    "የጤና እንክብካቤ መሣሪያዎች ኢትዮጵያ",
-
-    // የኢንዱስትሪ ኬሚካሎች
-    "የኢንዱስትሪ ኬሚካሎች ኢትዮጵያ",
-    "ክሎሪን ፓውደር ኢትዮጵያ",
-    "አሉሚኒየም ሰልፌት ኢትዮጵያ",
-    "ካውስቲክ ሶዳ ኢትዮጵያ",
-    "የውሃ ማጣሪያ ኬሚካሎች ኢትዮጵያ",
-    "የምግብ ማቀነባበሪያ ኬሚካሎች ኢትዮጵያ",
-    "የኢንዱስትሪ ሶልቬንቶች ኢትዮጵያ",
-    "የቀለም ኬሚካሎች ኢትዮጵያ",
-    "የፕላስቲክ ተጨማሪዎች ኢትዮጵያ",
-    "ሬዚኖች ኢትዮጵያ",
-    "ቀለሞች ኢትዮጵያ",
-    "የማሸጊያ ተጨማሪዎች ኢትዮጵያ",
-    "የኬሚካል አስመጪ ኢትዮጵያ",
-    "የኢትዮጵያ የኢንዱስትሪ ጥሬ ዕቃዎች",
-
-    // አጠቃላይ ንግድ እና አስመጪነት
-    "የኢትዮጵያ አስመጪ ኩባንያ",
-    "የኢትዮጵያ መሣሪያዎች አስመጪ",
-    "የኢንዱስትሪ መፍትሄዎች ኢትዮጵያ",
-    "የኢትዮጵያ የንግድ ድርጅት",
-    "ዓለም አቀፍ ግብዓት ፍለጋ ኢትዮጵያ",
-    "አዲስ አበባ የኢንዱስትሪ አቅርቦቶች",
-    "የኢትዮጵያ የቢዝነስ አቅራቢዎች",
-
-    // ጂኦግራፊያዊ ኢላማ
-    "አዲስ አበባ",
-    "ኢትዮጵያ",
-    "ምስራቅ አፍሪካ",
-    "የምስራቅ አፍሪካ አቅራቢዎች",
-    "የኢትዮጵያ አከፋፋዮች",
-    "አዲስ አበባ አቅራቢዎች",
-
-    // መፈክር
-    "ንግድን ማቅለል ዋጋን ማጎልበት",
-
-    // Brand
-    "GNS Trading",
-    "GNS Trading Ethiopia",
-    "GNS Trading PLC",
-    "GNS solar Ethiopia",
-    "GNS construction Ethiopia",
-    "GNS medical Ethiopia",
-    "GNS industrial chemicals Ethiopia",
-
-    // Solar
-    "solar Ethiopia",
-    "solar Addis Ababa",
-    "solar panels Ethiopia",
-    "solar panels Addis Ababa",
-    "solar energy Ethiopia",
-    "solar system installation Ethiopia",
-    "off-grid solar Ethiopia",
-    "on-grid solar Ethiopia",
-    "solar inverter Ethiopia",
-    "solar battery Ethiopia",
-    "solar suppliers Ethiopia",
-    "renewable energy Ethiopia",
-    "PV systems Ethiopia",
-    "Ethiopia solar distributor",
-    "East Africa solar equipment",
-
-    // Construction (broad)
-    "construction Ethiopia",
-    "construction Addis Ababa",
-    "construction tools Ethiopia",
-    "industrial tools Ethiopia",
-    "power tools Ethiopia",
-    "Ethiopia hardware supplier",
-    "building materials Ethiopia",
-    "contractor tools Ethiopia",
-    "hand tools Ethiopia",
-    "construction equipment Ethiopia",
-    "welding equipment Ethiopia",
-    "plumbing tools Ethiopia",
-    "electrician tools Ethiopia",
-    "hardware importer Ethiopia",
-
-    // Medical (broad)
-    "medical equipment Ethiopia",
-    "medical supplies Ethiopia",
-    "hospital equipment Ethiopia",
-    "diagnostic devices Ethiopia",
-    "clinical equipment Ethiopia",
-    "Ethiopia medical devices",
-    "medical importer Ethiopia",
-    "healthcare equipment Ethiopia",
-
-    // Industrial Chemicals (NEW)
-    "industrial chemicals Ethiopia",
-    "chlorine powder Ethiopia",
-    "aluminum sulfate Ethiopia",
-    "caustic soda Ethiopia",
-    "water treatment chemicals Ethiopia",
-    "food processing chemicals Ethiopia",
-    "industrial solvents Ethiopia",
-    "paint chemicals Ethiopia",
-    "plastic additives Ethiopia",
-    "resins Ethiopia",
-    "colorants Ethiopia",
-    "packaging additives Ethiopia",
-    "chemical importer Ethiopia",
-    "Ethiopia industrial raw materials",
-
-    // General trade + imports
-    "Ethiopia import company",
-    "Ethiopia equipment importer",
-    "industrial solutions Ethiopia",
-    "Ethiopia trading company",
-    "international sourcing Ethiopia",
-    "Addis Ababa industrial supplies",
-    "Ethiopian business suppliers",
-
-    // Geographic targeting
-    "Addis Ababa",
-    "Ethiopia",
-    "East Africa",
-    "East African suppliers",
-    "Ethiopian distributors",
-    "Addis Ababa suppliers",
-
-    // Motto
-    "Simplifying Trade Amplifying Value",
-  ],
+    "GNS Trading — Simplifying Trade, Amplifying Value. Supplier of solar systems, construction equipment, medical devices, and industrial chemicals across Ethiopia.",
 
   openGraph: {
     title:
       "GNS Trading | Solar, Construction, Medical & Industrial Chemical Supplier in Ethiopia",
     description:
-      "GNS Trading supplies solar systems, construction equipment, medical devices, and industrial chemicals across Ethiopia. High-quality products, reliable sourcing, nationwide delivery.",
+      "GNS Trading supplies solar systems, construction equipment, medical devices, and industrial chemicals across Ethiopia.",
     siteName: "GNS Trading",
     type: "website",
     locale: "en_US",
@@ -225,10 +48,11 @@ export const metadata: Metadata = {
     title:
       "GNS Trading | Solar, Construction, Medical & Industrial Chemical Supplier in Ethiopia",
     description:
-      "Premium solar systems, construction tools, medical devices and industrial chemicals for the Ethiopian market.",
+      "Premium solar systems, construction equipment, medical devices, and industrial chemicals for the Ethiopian market.",
     images: ["/logo.png"],
   },
 };
+
 
 export default function RootLayout({
   children,
@@ -274,11 +98,7 @@ export default function RootLayout({
           }}
         />
 
-        <Providers>
-          <Navigation />
-          <main className="pt-24">{children}</main>
-          <Footer />
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

@@ -1,46 +1,37 @@
 // @/components/common/LanguageToggle.tsx
 
 "use client";
-import { Languages } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/components/context/LanguageContext";
 
-const languages: { code: "en" | "am"; name: string; flag: string; enabled: boolean }[] = [
-  { code: "am", name: "አማርኛ", flag: "🇪🇹", enabled: true },
-  { code: "en", name: "English", flag: "🇺🇸", enabled: true },
-];
+import { useRouter, usePathname } from "next/navigation";
+import { useLanguage } from "@/components/context/LanguageContext";
+import { Button } from "@/components/ui/button";
 
 export function LanguageToggle() {
   const { language, setLanguage } = useLanguage();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  function toggleLanguage() {
+    const newLang = language === "am" ? "en" : "am";
+    setLanguage(newLang);
+
+    document.cookie = `gns-lang=${newLang}; path=/; max-age=31536000; SameSite=Lax`;
+
+    const segments = pathname.split("/").filter(Boolean);
+    segments[0] = newLang;
+
+    router.push("/" + segments.join("/"));
+  }
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="h-10 w-10">
-          <Languages className="h-5 w-5" />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        {languages.map(({ code, name, flag, enabled }) => (
-          <DropdownMenuItem
-            key={code}
-            onClick={() => enabled && setLanguage(code)}
-            className={`cursor-pointer ${enabled ? "" : "opacity-50 cursor-not-allowed"}`}
-            disabled={!enabled}
-          >
-            <span className="mr-2">{flag}</span>
-            {name}
-            {!enabled && <span className="ml-2 text-xs">(Coming soon)</span>}
-            {language === code && <span className="ml-auto">✓</span>}
-          </DropdownMenuItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <Button
+      variant="ghost"
+      size="icon"
+      className="h-10 w-10 font-semibold text-sm"
+      onClick={toggleLanguage}
+      title="Switch Language"
+    >
+      {language === "am" ? "EN" : "አማ"}
+    </Button>
   );
 }

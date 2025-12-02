@@ -1,10 +1,11 @@
 // @/app/providers.tsx
 
 "use client";
+
 import { ThemeProvider as NextThemesProvider } from "next-themes";
-import { LanguageProvider } from "@/components/context/LanguageContext";
 import { type ThemeProviderProps } from "next-themes";
-import { Toaster as SonnerToaster } from 'sonner';
+import { Toaster as SonnerToaster } from "sonner";
+import { LanguageProvider } from "@/components/context/LanguageContext";
 
 export function Providers({ children, ...props }: ThemeProviderProps) {
   return (
@@ -14,15 +15,11 @@ export function Providers({ children, ...props }: ThemeProviderProps) {
       enableSystem
       storageKey="jireh-theme"
       themes={["light", "dark", "system"]}
-      value={{
-        light: "light",
-        dark: "dark",
-        system: "system",
-      }}
       {...props}
     >
       <LanguageProvider>
         {children}
+
         <SonnerToaster
           position="bottom-right"
           expand={false}

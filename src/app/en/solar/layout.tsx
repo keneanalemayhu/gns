@@ -1,4 +1,4 @@
-// @/app/solar/layout.tsx
+// @/app/en/solar/layout.tsx
 
 import type { Metadata } from "next";
 
@@ -6,25 +6,6 @@ export const metadata: Metadata = {
   title: "Solar Systems in Ethiopia | Solar Panels, Inverters, Batteries | GNS Trading",
   description:
     "High-quality solar panels, inverters, batteries, and off-grid/on-grid systems for Ethiopia. Reliable solar energy solutions provided by GNS Trading.",
-  keywords: [
-    // Amharic keywords
-    "የሶላር ኢትዮጵያ",
-    "የሶላር ፓነሎች አዲስ አበባ",
-    "የሶላር ኢንቨርተር ኢትዮጵያ",
-    "የሶላር ባትሪ ኢትዮጵያ",
-    "ከግሪድ ውጪ የሶላር ኢትዮጵያ",
-    "ታዳሽ ኃይል ኢትዮጵያ",
-    "ፒ.ቪ. ስርዓቶች ኢትዮጵያ",
-
-    // English keywords
-    "solar Ethiopia",
-    "solar panels Addis Ababa",
-    "solar inverter Ethiopia",
-    "solar battery Ethiopia",
-    "off-grid solar Ethiopia",
-    "renewable energy Ethiopia",
-    "PV systems Ethiopia",
-  ],
   openGraph: {
     title: "Solar Systems in Ethiopia | GNS Trading",
     description:
