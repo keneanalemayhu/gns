@@ -3,6 +3,7 @@
 
 "use client";
 import Link from "next/link";
+import {ArrowRight} from "lucide-react";
 
 export default function HomePage_EN() {
   return (
@@ -73,32 +74,18 @@ export default function HomePage_EN() {
         </section>
 
         {/* DIVISIONS */}
-        <section>
+
+        <section className="py-16">
           <h2 className="text-3xl font-bold text-center mb-12">Our Divisions</h2>
 
           <div className="grid md:grid-cols-4 gap-10">
-
-            {/* SOLAR */}
-            <Link
-              href="/en/solar"
-              className="bg-white dark:bg-neutral-800 p-6 rounded-2xl border dark:border-neutral-700 shadow-sm hover:shadow-xl transition"
-            >
-              <div className="h-40 w-full rounded-lg mb-4 overflow-hidden">
-                <img
-                  src="/solar.jpg"
-                  alt="Solar energy"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-
-              <h3 className="text-xl font-semibold mb-2">Solar Energy</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
-                Panels • Batteries • Inverters • Mounting • Installation
-              </p>
-            </Link>
-
-            {/* OTHER DIVISIONS */}
             {[
+              {
+                name: "Solar Energy",
+                desc: "Panels • Batteries • Inverters • Mounting • Installation",
+                img: "/solar.jpg",
+                href: "/en/solar",
+              },
               {
                 name: "Construction Equipments",
                 desc: "Mixers • Compactors • Power tools • Welding machines",
@@ -121,20 +108,27 @@ export default function HomePage_EN() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="bg-white dark:bg-neutral-800 p-6 rounded-2xl border dark:border-neutral-700 shadow-sm hover:shadow-xl transition"
+                className="group relative bg-white dark:bg-neutral-800 p-6 rounded-2xl border dark:border-neutral-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
               >
                 <div className="h-40 w-full rounded-lg mb-4 overflow-hidden">
                   <img
                     src={item.img}
                     alt={item.name}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
 
                 <h3 className="text-xl font-semibold mb-2">{item.name}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
+
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">
                   {item.desc}
                 </p>
+
+                {/* The "Clickable" cue */}
+                <div className="mt-auto flex items-center text-blue-600 dark:text-blue-400 font-medium text-sm">
+                  Learn More
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </div>
               </Link>
             ))}
           </div>

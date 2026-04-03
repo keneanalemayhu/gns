@@ -3,6 +3,7 @@
 
 "use client";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export default function AmHomePage() {
   return (
@@ -40,9 +41,9 @@ export default function AmHomePage() {
           </h2>
 
           <p className="text-lg max-w-4xl mx-auto text-center text-gray-700 dark:text-gray-300 mb-12">
-            ጂ.ኤን.ኤስ ትሬዲንግ በኢትዮጵያ ውስጥ በፍጥነት እያደገ ያለ አስመጪ እና 
-            አከፋፋይ ነው—ለቢዝነሶች፣ ለኤንጂኦዎች፣ ለኮንትራክተሮች እና 
-            ለግል ገዢዎች የሶላር ስሪቶችን፣ የግንባታ ማሽነሪዎችን፣ የሕክምና 
+            ጂ.ኤን.ኤስ ትሬዲንግ በኢትዮጵያ ውስጥ በፍጥነት እያደገ ያለ አስመጪ እና
+            አከፋፋይ ነው—ለቢዝነሶች፣ ለኤንጂኦዎች፣ ለኮንትራክተሮች እና
+            ለግል ገዢዎች የሶላር ስሪቶችን፣ የግንባታ ማሽነሪዎችን፣ የሕክምና
             መሣሪያዎችን እና የኢንዱስትሪ ኬሚካል ምርቶችን ያቀርባል።
           </p>
 
@@ -73,74 +74,62 @@ export default function AmHomePage() {
         </section>
 
         {/* DIVISIONS */}
-        <section>
+        <section className="py-16">
           <h2 className="text-3xl font-bold text-center mb-12">የእኛ ክፍሎች</h2>
 
           <div className="grid md:grid-cols-4 gap-10">
+            {[
+              {
+                name: "የሶላር",
+                desc: "ፓነሎች • ባትሪዎች • ኢንቨርተሮች • መጫኛ",
+                img: "/solar.jpg",
+                href: "/am/solar",
+              },
+              {
+                name: "የግንባታ መሣሪያዎች",
+                desc: "ማደባለቂያዎች • ማጨቂያዎች/መጠቅጠቂያዎች • የኃይል መሣሪያዎች • መበየጃ ማሽኖች",
+                img: "/construction.png",
+                href: "/am/construction",
+              },
+              {
+                name: "የሕክምና መሣሪያዎች",
+                desc: "Diagnostics • የላብ መሣሪያዎች • የደህንነት አቅርቦቶች",
+                img: "/medical.jpg",
+                href: "/am/medical",
+              },
+              {
+                name: "የኢንዱስትሪ ኬሚካሎች",
+                desc: "የውሃ ማጣሪያ • የቀለም • የፕላስቲክ ኬሚካሎች",
+                img: "/industrial_chemicals.jpg",
+                href: "/am/industrial",
+              },
+            ].map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="group relative bg-white dark:bg-neutral-800 p-6 rounded-2xl border dark:border-neutral-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              >
+                <div className="h-40 w-full rounded-lg mb-4 overflow-hidden">
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
 
-            {/* SOLAR */}
-            <Link
-              href="/am/solar"
-              className="bg-white dark:bg-neutral-800 p-6 rounded-2xl border dark:border-neutral-700 shadow-sm hover:shadow-xl transition"
-            >
-              <div className="h-40 w-full rounded-lg mb-4 overflow-hidden">
-                <img
-                  src="/solar.jpg"
-                  alt="የሶላር ክፍል"
-                  className="h-full w-full object-cover"
-                />
-              </div>
+                <h3 className="text-xl font-semibold mb-2">{item.name}</h3>
 
-              <h3 className="text-xl font-semibold mb-2">የሶላር</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
-                ፓነሎች • ባትሪዎች • ኢንቨርተሮች • መጫኛ
-              </p>
-            </Link>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">
+                  {item.desc}
+                </p>
 
-            {/* Other divisions */}
-            <Link
-              href="/am/construction"
-              className="bg-white dark:bg-neutral-800 p-6 rounded-2xl border dark:border-neutral-700 shadow-sm hover:shadow-xl transition"
-            >
-              <div className="h-40 w-full rounded-lg mb-4 overflow-hidden">
-                <img src="/construction.png" alt="ግንባታ" className="h-full w-full object-cover" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">የግንባታ መሣሪያዎች</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
-                ማደባለቂያዎች • ማጨቂያዎች/መጠቅጠቂያዎች • የኃይል መሣሪያዎች • መበየጃ ማሽኖች
-              </p>
-            </Link>
-
-            <Link
-              href="/am/medical"
-              className="bg-white dark:bg-neutral-800 p-6 rounded-2xl border dark:border-neutral-700 shadow-sm hover:shadow-xl transition"
-            >
-              <div className="h-40 w-full rounded-lg mb-4 overflow-hidden">
-                <img src="/medical.jpg" alt="ሕክምና" className="h-full w-full object-cover" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">የሕክምና መሣሪያዎች</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
-                Diagnostics • የላብ መሣሪያዎች • የደህንነት አቅርቦቶች
-              </p>
-            </Link>
-
-            <Link
-              href="/am/industrial"
-              className="bg-white dark:bg-neutral-800 p-6 rounded-2xl border dark:border-neutral-700 shadow-sm hover:shadow-xl transition"
-            >
-              <div className="h-40 w-full rounded-lg mb-4 overflow-hidden">
-                <img
-                  src="/industrial_chemicals.jpg"
-                  alt="የኢንዱስትሪ ኬሚካሎች"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">የኢንዱስትሪ ኬሚካሎች</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
-                የውሃ ማጣሪያ • የቀለም • የፕላስቲክ ኬሚካሎች
-              </p>
-            </Link>
-
+                {/* The "Clickable" cue in Amharic */}
+                <div className="mt-auto flex items-center text-blue-600 dark:text-blue-400 font-medium text-sm">
+                  ተጨማሪ መረጃ
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
 
