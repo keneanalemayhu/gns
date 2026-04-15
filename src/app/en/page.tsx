@@ -3,12 +3,11 @@
 
 "use client";
 import Link from "next/link";
-import {ArrowRight} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function HomePage_EN() {
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-neutral-900 text-gray-900 dark:text-gray-100">
-
       {/* HERO SECTION */}
       <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden">
         <img
@@ -33,7 +32,6 @@ export default function HomePage_EN() {
 
       {/* CONTENT */}
       <div className="max-w-7xl mx-auto px-6 py-20">
-
         {/* WHAT WE DO */}
         <section className="mb-32">
           <h2 className="text-3xl font-bold text-center mb-8">What We Do</h2>
@@ -76,7 +74,9 @@ export default function HomePage_EN() {
         {/* DIVISIONS */}
 
         <section className="py-16">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Divisions</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Our Divisions
+          </h2>
 
           <div className="grid md:grid-cols-4 gap-10">
             {[
@@ -125,10 +125,10 @@ export default function HomePage_EN() {
                 </p>
 
                 {/* The "Clickable" cue */}
-                <div className="mt-auto flex items-center text-blue-600 dark:text-blue-400 font-medium text-sm">
-                  Learn More
+                <button className="mt-auto flex items-center w-fit px-4 py-2 border border-blue-600/30 dark:border-blue-400/30 rounded-lg text-blue-600 dark:text-blue-400 font-medium text-sm transition-all hover:bg-blue-50 dark:hover:bg-blue-900/20 active:scale-95 cursor-pointer group">
+                  Click here for more
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </div>
+                </button>
               </Link>
             ))}
           </div>
