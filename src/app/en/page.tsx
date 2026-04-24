@@ -142,7 +142,7 @@ export default function HomePage_EN() {
             {[
               {
                 step: "1. Import",
-                desc: "We import ready-made, off-the-shelf solar products, equipment, and supplies directly from trusted international manufacturers.",
+                desc: "We import ready-made, off-the-shelf products, equipment, and supplies directly from trusted international manufacturers.",
               },
               {
                 step: "2. Clearance",
@@ -154,7 +154,7 @@ export default function HomePage_EN() {
               },
               {
                 step: "4. Sell",
-                desc: "We supply high-quality solar products and equipment directly to customers, businesses, wholesalers, and retailers across Ethiopia.",
+                desc: "We supply high-quality products and equipment directly to customers, businesses, wholesalers, and retailers across Ethiopia.",
               },
             ].map((step) => (
               <div
